@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "hipsterbay",
   "version": "0.0.0",
-  "description": "Node.js/Express Template",
+  "description": "Hipsterbay",
   "main": "app/index.js",
   "directories": {
     "test": "test"
@@ -22,14 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nss-cohort-2014-06-07/template"
+    "url": "https://github.com/kaylalynjones/hipsterbay"
   },
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "author": "Kayla Jones <kaylalyne424@gmail.com>",
+  "contributors": ["David D. Boling <daviddboling@gmail.com>", "Shruti Sharma <shrutijalewar@gmail.com>", "Dennis Stanley <stanleytd@gmail.com>, "],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nss-cohort-2014-06-07/template/issues"
+    "url": "https://github.com/kaylalynjones/hipsterbay/issues"
   },
-  "homepage": "https://github.com/nss-cohort-2014-06-07/template",
+  "homepage": "https://github.com/kaylalynjones/hipsterbay",
   "dependencies": {
     "async": "^0.9.0",
     "bcrypt": "^0.8.0",
