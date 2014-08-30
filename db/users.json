@@ -1,11 +1,27 @@
 {
   "_id" : {"$oid":"000000000000000000000001"},
   "email" : "bob@aol.com",
-  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2"
-}
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "alias" : "Bob",
+  "phone" : "+15005550006",
+  "photo" : "http://votesmart.org/canphoto/2541_lg.jpg",
+  "loc" : {
+    "name" : "Nashville",
+    "lat"  : 36.1866405,
+    "lng"  : -86.7852455
+  }
+},
 {
   "_id" : {"$oid":"000000000000000000000002"},
   "email" : "sue@aol.com",
-  "password" : "$2a$10$sjPx9TkrEASeXzH6uuDCDO.n1Sj/H2A/bu/9hBFfm5fm3Z4LzrEPa"
+  "password" : "$2a$10$sjPx9TkrEASeXzH6uuDCDO.n1Sj/H2A/bu/9hBFfm5fm3Z4LzrEPa",
+  "alias" : "Sue",
+  "phone" : "+15005550006",
+  "photo" : "http://votesmart.org/canphoto/2541_lg.jp://pbs.twimg.com/profile_images/3485378075/96bb6b9c4cb37faf3e41b7e42f0a372b.jpeg",
+  "loc" : {
+    "name" : "Nashville",
+    "lat"  : 36.1866405,
+    "lng"  : -86.7852455
+  }
 }
 
