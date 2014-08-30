@@ -1,0 +1,33 @@
+{
+    "_id" : {"$oid" : "00000000000000000000000a"},
+    "name" : "Used Candle",
+    "ownerId" : {"$oid": "000000000000000000000001"},
+    "description" : "Wow, just a candle. Really? Seriously?",
+    "photo" : "http://upload.wikimedia.org/wikipedia/commons/9/9f/Candle-calendar.jpg",
+    "isForOffer" : false,
+    "isForBid" : false,
+    "isAvailable" : true
+}
+
+{
+    "_id" : {"$oid" : "00000000000000000000000b"},
+    "name" : "Red Apple Lip Balm",
+    "ownerId" : {"$oid": "000000000000000000000001"},
+    "description" : "The apple wasn't enough?",
+    "photo" : "http://www.musingsofamuse.com/wp-content/uploads/2013/09/Bath-Body-Works-Liplicious-Apple-Lip-Balm.jpg",
+    "isForOffer" : false,
+    "isForBid" : false,
+    "isAvailable" : true
+}
+
+{
+    "_id" : {"$oid" : "00000000000000000000000c"},
+    "name" : "2003 Nissan Versa",
+    "ownerId" : {"$oid": "000000000000000000000002"},
+    "description" : "Slightly used. 150k miles. Buy it now!",
+    "photo" : "http://media.caranddriver.com/images/media/35636/2008-nissan-versa-sedan-photo-36879-s-1280x782.jpg",
+    "isForOffer" : false,
+    "isForBid" : false,
+    "isAvailable" : true
+}
+
