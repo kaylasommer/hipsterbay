@@ -26,7 +26,7 @@ Item.create = function(o, cb){
 
 Item.findAvailable = function(id, cb){
   var ownerId = Mongo.ObjectID(id);
-  Item.collection.find({ownerId: ownerId}).toArray(cb);
+  Item.collection.find({ownerId: ownerId, isAvailable: true}).toArray(cb);
 };
 
 
