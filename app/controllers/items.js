@@ -18,6 +18,6 @@ exports.index = function(req, res){
 
 exports.addItem = function(req, res){
   Item.create(req.body, function(err, item){
-   res.redirect('/items/manage');
+    res.redirect('/items/manage');
   });
 };
