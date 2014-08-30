@@ -24,7 +24,13 @@ describe('Auction', function(){
 
   //Dennis or Shruti, you will need to make the tests for the constructor and whatever else is part of your assignment
   //Also, if you look inside the db/auctions.js folder to see some test data that I've provided for you.
-
-
+  describe('.findByOwnerId', function(){
+    it('should find all auctions for a specific user', function(done){
+      Auction.findByOwnerId('000000000000000000000002', function(err, auctions){
+        expect(auctions).to.have.length(2);
+        done();
+      });
+    });
+  });
 
 });

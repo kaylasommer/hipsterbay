@@ -31,3 +31,24 @@
     "isAvailable" : true
 }
 
+{
+    "_id" : {"$oid" : "00000000000000000000000d"},
+    "name" : "2005 Pontiac Sunfire",
+    "ownerId" : {"$oid": "000000000000000000000002"},
+    "description" : "They didn't even make them in this year!",
+    "photo" : "http://carspics-db.com/data_images/models/pontiac-sunfire/pontiac-sunfire-03.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "00000000000000000000000e"},
+    "name" : "Bent, rusty knife",
+    "ownerId" : {"$oid": "000000000000000000000002"},
+    "description" : "Knife was a prop on Scream 3.",
+    "photo" : "http://www.knife-depot.com/blog/wp-content/uploads/2011/12/Rusty-knife1.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
