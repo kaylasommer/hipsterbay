@@ -40,5 +40,44 @@ describe('users', function(){
       });
     });
   });
+
+  describe('post /register', function(){
+    it('should register and login a user and redirect', function(done){
+      request(app)
+      .post('/register')
+      .send('email=abcde%40aol.com&password=abcd')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        expect(res.headers.location).to.equal('/user/profile');
+        done();
+      });
+    });
+  });
+
+  describe('post /login', function(){
+    it('should login a user and redirect', function(done){
+      request(app)
+      .post('/login')
+      .send('email=bob%40aol.com&password=1234')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        expect(res.headers.location).to.equal('/user/profile');
+        done();
+      });
+    });
+  });
+
+  describe('get /user/profile', function(){
+    it('should not go to the page when user isnt logged in', function(done){
+      request(app)
+      .get('/user/profile')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        expect(res.headers.location).to.equal('/login');
+        done();
+      });
+    });
+  });
+
 });
 
