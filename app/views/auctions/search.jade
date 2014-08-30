@@ -1,0 +1,22 @@
+extends ../shared/template
+block content
+  .row
+    h2.text-center Search Hipsterbay
+    hr
+  .row
+    .col-xs-3.sidebar
+      ul.nav.side-bar#tag
+        li tag
+        li another tag
+    .col-xs-9.col-xs-offset-3
+      .navbar-form.navbar-left(role='search')
+        .form-group
+          input.form-control#search(type='text' placeholder='Search')
+          button.btn.btn-default#search-button(type='submit') Submit
+      #map
+      .row
+        .col-xs-9.auctions
+          p auctions names here.
+
+block scripts
+  script(src='/js/user/map.js')
