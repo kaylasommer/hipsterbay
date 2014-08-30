@@ -20,9 +20,7 @@ Object.defineProperty(Item, 'collection', {
 });
 
 Item.create = function(o, cb){
-  console.log(o);
   var item = new Item(o);
-  console.log(item);
   Item.collection.save(item, cb);
 };
 
