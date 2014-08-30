@@ -28,13 +28,28 @@ describe('users', function(){
     });
   });
 
-  describe('get /register', function(){
+  /*describe('get /register', function(){
     it('should show the register page', function(done){
       request(app)
       .get('/register')
       .end(function(err, res){
         expect(res.status).to.equal(200);
         expect(res.text).to.include('Register');
+        done();
+      });
+    });
+  });*/
+  describe('get /user/profile', function(){
+    it('should show the edit profile page', function(done){
+      request(app)
+      .get('/profile/edit')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('phone');
+        expect(res.text).to.include('Email');
+        expect(res.text).to.include('Photo');
+        expect(res.text).to.include('alias');
         done();
       });
     });

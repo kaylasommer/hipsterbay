@@ -6,6 +6,10 @@
 {
   "_id" : {"$oid":"000000000000000000000002"},
   "email" : "sue@aol.com",
-  "password" : "$2a$10$sjPx9TkrEASeXzH6uuDCDO.n1Sj/H2A/bu/9hBFfm5fm3Z4LzrEPa"
+  "password" : "$2a$10$sjPx9TkrEASeXzH6uuDCDO.n1Sj/H2A/bu/9hBFfm5fm3Z4LzrEPai",
+  "alias" : "catwoman",
+  "phone" : "615-496-3485",
+  "photo" : "http://theoldpros.files.wordpress.com/2011/09/sue-brown.jpg",
+  "Loc" : {"name":"Nashville","lat":"36.2", "lng": "86.7"}
 }
 

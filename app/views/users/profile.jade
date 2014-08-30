@@ -1,0 +1,29 @@
+extends ../shared/template
+block content
+  h2 Edit Profile
+  .row
+    .col-xs-6
+      form(role='form', method='post', action='/user/profile')
+        input(type='hidden', name='_method', value='put')
+        .form-group
+          label(for='email') Email
+          input.form-control#email(type='email', name='email', value=user.email, autofocus=true)
+        .form-group
+          label(for='alias') Alias
+          input.form-control#alias(type='text', name='alias', value=user.alias)
+        .form-group
+          label(for='phone') Phone
+          input.form-control#phone(type='tel', name='phone', value=user.phone)
+        .form-group
+          label(for='photo') Photo
+          input.form-control#photo(type='text', name='photo', value=user.photo)
+        input#lat(type='hidden', name='lat', value=user.loc.lat)
+        input#lng(type='hidden', name='lng', value=user.loc.lng)
+        .form-group
+          label(for='location') Location
+          input.form-control#loc(type='text', name='tagline', value=user.loc.name)
+
+        button.btn.btn-primary(type='submit') Submit
+    .col-xs-6
+
+block scripts

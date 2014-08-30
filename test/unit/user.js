@@ -7,7 +7,7 @@ var expect    = require('chai').expect,
     User      = require('../../app/models/user'),
     dbConnect = require('../../app/lib/mongodb'),
     cp        = require('child_process'),
-    db        = 'template-test';
+    db        = 'hipsterbay-test';
 
 describe('User', function(){
   before(function(done){
@@ -28,5 +28,16 @@ describe('User', function(){
       expect(u).to.be.instanceof(User);
     });
   });
-});
+  describe('#save', function(){
+    it('should save a user', function(done){
+      var u = new User(),
+          o = {alias:'batman', phone:'615-123-1123'};
 
+      u.save(o, function(err, user){
+        expect(user.alias).to.equal('batman');
+        expect(user.phone).to.equal('615-123-1123');
+        done();
+      });
+    });
+  });
+});

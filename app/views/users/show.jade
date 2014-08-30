@@ -1,0 +1,24 @@
+extends ../shared/template
+block content
+  .row
+    .col-xs-12
+      h2: a(href='/profile/edit')= user.alias
+      h5= user.email
+  .row
+    .col-xs-2
+      a.thumbnail(href='#')
+        img(src=user.photo)
+    .col-xs-10
+  .row
+    .col-xs-12
+      table.table.table-striped.table-hover.table-bordered
+        thead
+          tr
+            th Phone
+            th Location
+        body
+          tr
+            td= user.phone
+            td= user.loc.name
+
+block scripts

@@ -32,5 +32,13 @@ User.authenticate = function(o, cb){
   });
 };
 
+User.prototype.save = function(o, cb){
+  var properties = Object.keys(o),
+    self       = this;
+
+  properties.forEach(function(property){
+    self[property] = o[property];
+  });
+};
 module.exports = User;
 
