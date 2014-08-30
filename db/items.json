@@ -52,3 +52,25 @@
     "isForBid" : false,
     "isAvailable" : false
 }
+
+{
+    "_id" : {"$oid" : "00000000000000000000000f"},
+    "name" : "A wooden stick.",
+    "ownerId" : {"$oid": "000000000000000000000001"},
+    "description" : "So, just a wooden stick. Nothing more. Nothing less.",
+    "photo" : "http://www.cagreen.ca/images/NTSTC10C_B.gif",
+    "isForOffer" : false,
+    "isForBid" : true,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "00000000000000000000001a"},
+    "name" : "Bob's Kidney",
+    "ownerId" : {"$oid": "000000000000000000000001"},
+    "description" : "Need a kidney? Paying in cash? We can be friends! CALL ME ASAP!",
+    "photo" : "http://antiekllc.com/wp-content/uploads/2014/05/single-kidney-bean.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}

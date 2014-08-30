@@ -1,9 +1,14 @@
-//exports.show = function(req, res){
-  //Auction.findById(req.params.auctionId, function(auction){
-    //if(res.locals.user._id === auction.ownerId){
-      //res.render('auctions/seller-show', {auction:auction});
-    //}else{
-      //res.render('auction/bidder-show', {auction:auction});
-    //}
-  //});
-//};
+'use strict';
+
+var Auction = require('../models/auction');
+
+exports.show = function(req, res){
+  Auction.displayAuction(req.params.auctionId, function(auction){
+    console.log(auction);
+    if(res.locals.user._id.toString() === auction.ownerId.toString()){
+      res.render('auctions/seller-show', {auction:auction});
+    }else{
+      res.render('auctions/bidder-show', {auction:auction});
+    }
+  });
+};
