@@ -29,7 +29,7 @@ describe('users', function(){
   });
 
   describe('get /items/manage', function(){
-    it('should should the item management page where users can create new items', function(done){
+    it('should show the item management page where users can create new items', function(done){
       request(app)
       .get('/items/manage')
       .set('cookie', cookie)
@@ -39,4 +39,18 @@ describe('users', function(){
       });
     });
   });
+
+  describe('post /items/add', function(){
+    it('should create a new available item', function(done){
+      request(app)
+      .post('/items/add')
+      .set('cookie', cookie)
+      .send('name=Test+Item&ownerId=000000000000000000000002&photo=test.jpg&description=Testing+description')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
+
 });
