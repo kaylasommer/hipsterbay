@@ -4,9 +4,10 @@
 'use strict';
 
 var expect    = require('chai').expect,
-    Auction      = require('../../app/models/auction'),
+    Auction   = require('../../app/models/auction'),
     dbConnect = require('../../app/lib/mongodb'),
     cp        = require('child_process'),
+    Mongo     = require('mongodb'),
     db        = 'hippie-test';
 
 describe('Auction', function(){
@@ -22,8 +23,6 @@ describe('Auction', function(){
     });
   });
 
-  //Dennis or Shruti, you will need to make the tests for the constructor and whatever else is part of your assignment
-  //Also, if you look inside the db/auctions.js folder to see some test data that I've provided for you.
   describe('.findByOwnerId', function(){
     it('should find all auctions for a specific user', function(done){
       Auction.findByOwnerId('000000000000000000000002', function(err, auctions){
@@ -32,5 +31,19 @@ describe('Auction', function(){
       });
     });
   });
+
+  describe('.displayAuction', function(){
+    it('should display an auction with items and the bidders of those items', function(done){
+      Auction.displayAuction('a20000000000000000000000', function(auction){
+        expect(auction.ownerId).to.be.instanceof(Mongo.ObjectID);
+        expect(auction.bids).to.have.length(1);
+        //expect(auction.bidders).to.have.length(1);
+        done();
+      });
+    });
+  });
+
+
+
 
 });

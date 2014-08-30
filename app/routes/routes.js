@@ -10,7 +10,8 @@ var morgan         = require('morgan'),
     debug          = require('../lib/debug'),
     home           = require('../controllers/home'),
     users          = require('../controllers/users'),
-    items          = require('../controllers/items');
+    items          = require('../controllers/items'),
+    auctions       = require('../controllers/auctions');
 
 module.exports = function(app, express){
   app.use(morgan('dev'));
@@ -37,7 +38,7 @@ module.exports = function(app, express){
   //app.get('/items/:itemId/show', items.show); //Kayla, I changed this route from /items/show to what you see here
   //app.delete('/items/:itemId', items.delete);
   //app.post('/items/auction', auctions.new);
-  //app.get('/auction/:auctionId', auctions.show);
+  app.get('/auction/:auctionId', auctions.show);
   //app.post('/auction/:auctionId/accept', auctions.acceptSwap);
   //app.get('/auction/search', auctions.search);
   //app.post('/auction/:auctionId/bid', auctions.bid);

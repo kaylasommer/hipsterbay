@@ -8,7 +8,6 @@ function Item(o){
   this.description = o.description;
   this.photo       = o.photo;
 
-  //private properties
   this.isForOffer  = false;
   this.isForBid    = false;
   this.isAvailable = true;
@@ -28,6 +27,11 @@ Item.findAvailable = function(id, cb){
   var ownerId = Mongo.ObjectID(id);
   Item.collection.find({ownerId: ownerId, isAvailable: true}).toArray(cb);
 };
+
+Item.findById = function(id, cb){
+  var itemId = Mongo.ObjectID(id);
+  Item.collection.findOne({_id: itemId}, cb);
+}
 
 
 module.exports = Item;

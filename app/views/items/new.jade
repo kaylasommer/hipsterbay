@@ -23,14 +23,12 @@ block content
                   each item in availableItems
                     tr
                       td: a(href="/item/#{item._id}/show")= item.name
-
-                
         .row
           table.table
             tr
               th My Auctions
                 each auction in auctions
                   tr
-                    td: a(href="/auctions/#{auction._id}")= auction.name
+                    td: a(href="/auction/#{auction._id}")= auction.name
 block scripts
   script(src="/js/user/new.js")
