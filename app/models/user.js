@@ -43,7 +43,7 @@ User.authenticate = function(o, cb){
 };
 
 User.prototype.update = function(o, cb){
-  User.collection.findAndModify({_id: this._id}, null, o, true, null, true, cb);
+  User.collection.update({_id: this._id}, {$set: o}, cb);
 };
 
 module.exports = User;

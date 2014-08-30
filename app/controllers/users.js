@@ -50,8 +50,6 @@ exports.authenticate = function(req, res){
 
 exports.profile = function(req, res){
   User.findById(res.locals.user._id, function(user){
-    console.log('USER IS BELOW!!!');
-    console.log(user);
     res.render('users/profile', {user:user});
   });
 };

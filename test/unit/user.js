@@ -44,7 +44,7 @@ describe('User', function(){
   describe('#update', function(){
     it('should update an item', function(done){
       User.findById('000000000000000000000002', function(user){
-        user.update(user, function(err, user){
+        user.update(user, function(){
           expect(user.alias).to.equal('Sue');
           expect(user.phone).to.equal('+15005550006');
           done();

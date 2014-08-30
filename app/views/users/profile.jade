@@ -19,7 +19,7 @@ block content
           tr
             td= user.phone
             td= user.loc.name
-      form(role='form', method='post', action='/user/profile')
+      form#edit-profile(role='form', method='post', action='/user/profile')
         input(type='hidden', name='_method', value='put')
         .form-group
           label(for='email') Email
@@ -38,7 +38,8 @@ block content
           input.form-control#loc(type='text', name='loc[name]', value=user.loc.name)
           input#lat(type='hidden', name='loc[lat]')
           input#lng(type='hidden', name='loc[lng]')
-        button.btn.btn-primary(type='submit') Submit
+        button#edit-profile-submit.btn.btn-primary(type='submit') Submit
 
 
 block scripts
+  script(src='/js/user/map.js')
