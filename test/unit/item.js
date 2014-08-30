@@ -40,4 +40,21 @@ describe('Item', function(){
       expect(apple.isAvailable).to.be.true;
     });
   });
+
+  describe('.create', function(){
+    it('should create a new Item and save to database', function(done){
+      var candle = {
+        ownerId: '000000000000000000000001',
+        name: 'candle',
+        photo: 'candle.jpg',
+        description: 'Wow, just a candle. Really? Seriously?',
+      };
+      Item.create(candle, function(err, item){
+        console.log(item);
+        expect(item).to.be.ok;
+        done();
+      });
+    });
+  });
+
 });

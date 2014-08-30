@@ -15,4 +15,14 @@ function Item(o){
 }
 
 
+Object.defineProperty(Item, 'collection', {
+  get: function(){return global.mongodb.collection('Item');}
+});
+
+Item.create = function(o, cb){
+  var item = new Item(o);
+  Item.collection.save(o, cb);
+};
+
+
 module.exports = Item;
