@@ -15,7 +15,7 @@
             form.navbar-form(method='post', action='/logout')
               .form-group
                 input(type='hidden', name='_method', value='delete')
-                button.btn.btn-danger= user.email
+                button.btn.btn-danger(type='submit')= user.email
         else
           li: a(href='/login') Register
           li: a(href='/login') Login

@@ -3,7 +3,7 @@ block content
     h2 Item Management
     .row
       .col-xs-6
-        form(method='post' action='/items/add')
+        form#add-item(method='post' action='/items/add')
           .form-group
             label Name
             input.form-control(type='text' name='name', autofocus=true)
@@ -17,13 +17,14 @@ block content
           button(type='submit') Add Item
       .col-xs-6
         .row
-          table.table
+          table.table#availableItems
             tr
               th Available Items
-              #availabeItems
-                each item in availableItems
-                  tr
-                    td: a(href="/item/#{item._id}/show")= item.name
+                  each item in availableItems
+                    tr
+                      td: a(href="/item/#{item._id}/show")= item.name
+
+                
         .row
           table.table
             tr

@@ -47,7 +47,10 @@ describe('users', function(){
       .set('cookie', cookie)
       .send('name=Test+Item&ownerId=000000000000000000000002&photo=test.jpg&description=Testing+description')
       .end(function(err, res){
-        expect(res.status).to.equal(302);
+        expect(res.text).to.include('Test');
+        expect(res.text).to.include('000000000000000000000002');
+        expect(res.text).to.include('test.jpg');
+        expect(res.text).to.include('Testing');
         done();
       });
     });
