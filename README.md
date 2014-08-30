@@ -1,14 +1,14 @@
-## name of project
+## Hipsterbay
 ### Code Badges
-build status icon
-coverage status icon
+[![Build Status](https://travis-ci.org/kaylalynjones/hipsterbay.svg)](https://travis-ci.org/kaylalynjones/hipsterbay)
+[![Coverage Status](https://coveralls.io/repos/kaylalynjones/hipsterbay/badge.png)](https://coveralls.io/r/kaylalynjones/hipsterbay)
 
 ### Screenshots
 ![Image1](https://raw.githubusercontent.com/nss-cohort-2014-06-07/express-template/master/docs/screenshots/one.jpg)
 ![Image2](https://raw.githubusercontent.com/nss-cohort-2014-06-07/express-template/master/docs/screenshots/two.jpg)
 
 ### Description
-write a description about your project
+This is a Web-app where individuals can barter and trade goods.
 
 ### Models
 ```
@@ -29,9 +29,9 @@ Collection 2
 ```
 
 ### Features
-- [x] Feature 1
-- [ ] Feature 2
-- [x] Feature 3
+- [ ] 
+- [ ] 
+- [x] 
 
 ### Running Tests
 ```bash
@@ -40,7 +40,9 @@ $ npm test
 ```
 
 ### Contributors
-- [Chyld Medford](https://github.com/chyld)
+- Shruti Sharma
+- Dave Boling
+- Dennis Stanley
 
 ### License
 [MIT](LICENSE)
