@@ -1,16 +1,15 @@
 (function(){
   'use strict';
     //Dave Note: Couldn't make AJAX return the new _id of the item, moving on to next feature
-    /*
 
     $(document).ready(function(){
-      $('#form').submit(addItem);
+      $('#add-item').submit(addItem);
     })
     function addItem(e){
-    var $form = $('#form'),
-        data = $form.serialize,
-        type = $form.attr('method'),
-        url = $form.attr('action')
+      var $form = $(e.target),
+           data = $form.serialize(),
+           type = $form.attr('method'),
+            url = $form.attr('action');
     $.ajax({
       url: url,
       type: type,
@@ -20,9 +19,8 @@
         console.log(data);
       }
     })
-    e.preventDefault()
+    e.preventDefault();
     }
-    */
 
 
 })();

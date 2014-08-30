@@ -3,7 +3,7 @@ block content
     h2 Item Management
     .row
       .col-xs-6
-        form(method='post' action='/items/add')
+        form#add-item(method='post' action='/items/add')
           .form-group
             label Name
             input.form-control(type='text' name='name', autofocus=true)
