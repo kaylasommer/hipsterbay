@@ -10,7 +10,7 @@ exports.index = function(req, res){
     //Find all auctions by currently logged in user
     Auction.findByOwnerId(res.locals.user._id, function(err, auctions){
       //Render the page with the items
-      res.render('items/new', {available: items, auctions: auctions});
+      res.render('items/new', {availableItems: items, auctions: auctions});
     });
   });
 };

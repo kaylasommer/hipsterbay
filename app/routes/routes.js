@@ -34,7 +34,7 @@ module.exports = function(app, express){
   //app.post('/user/profile', users.editProfile);
   app.get('/items/manage', items.index);
   //app.post('/items/add', items.addItem);
-  //app.get('/items/show', items.show);
+  //app.get('/items/:itemId/show', items.show);
   //app.delete('/items/:itemId', items.delete);
   //app.post('/items/auction', auctions.new);
   //app.get('/auction/:auctionId', auctions.show);

@@ -3,7 +3,8 @@
     "ownerId" : {"$oid": "000000000000000000000002"},
     "offeredItemId" :  {"$oid": "00000000000000000000000d"},
     "bids" : [],
-    "tag" : "vehicle"
+    "tag" : "vehicle",
+    "name": "2005 Pontiac Sunfire - Like New!"
 }
 
 {
@@ -11,5 +12,6 @@
     "ownerId" : {"$oid": "000000000000000000000002"},
     "offeredItemId" :  {"$oid": "00000000000000000000000e"},
     "bids" : [],
-    "tag" : "household"
+    "tag" : "household",
+    "name": "Scream 3 Movie Prop! Details inside! HURRY!"
 }
