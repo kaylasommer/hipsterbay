@@ -28,12 +28,13 @@ describe('users', function(){
     });
   });
 
-  describe('get /register', function(){
-    it('should show the register page', function(done){
+  describe('get /login', function(){
+    it('should show the login page', function(done){
       request(app)
-      .get('/register')
+      .get('/login')
       .end(function(err, res){
         expect(res.status).to.equal(200);
+        expect(res.text).to.include('Login');
         expect(res.text).to.include('Register');
         done();
       });

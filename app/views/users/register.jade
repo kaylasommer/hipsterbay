@@ -1,7 +1,8 @@
 extends ../shared/template
 block content
-  h2 Register
+  h2.text-center Register
   .row
+    .col-xs-3
     .col-xs-6
       form(role='form', method='post', action='/register')
         .form-group
@@ -11,7 +12,7 @@ block content
           label(for='password') Password
           input.form-control#password(type='password', name='password')
         button.btn.btn-primary(type='submit') Submit
-    .col-xs-6
+    .col-xs-3
 
 block scripts
 

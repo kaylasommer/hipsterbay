@@ -24,14 +24,13 @@ module.exports = function(app, express){
   app.use(debug.info);
 
   app.get('/', home.index);
-  app.get('/register', users.new);
   app.post('/register', users.create);
   app.get('/login', users.login);
   app.post('/login', users.authenticate);
 
   app.use(security.bounce);
   app.delete('/logout', users.logout);
-  //app.get('/user/profile', users.profile);
+  app.get('/user/profile', users.profile);
   //app.post('/user/profile', users.editProfile);
   app.get('/items/manage', items.index);
   //app.post('/items/add', items.addItem);

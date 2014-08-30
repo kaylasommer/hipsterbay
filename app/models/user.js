@@ -18,8 +18,10 @@ User.findById = function(id, cb){
 User.register = function(o, cb){
   User.collection.findOne({email:o.email}, function(err, user){
     if(user){return cb();}
-    o.password = bcrypt.hashSync(o.password, 10);
-    User.collection.save(o, cb);
+    User.collection.save({
+      email: o.email,
+      password: bcrypt.hashSync(o.password, 10)
+    }, cb);
   });
 };
 
