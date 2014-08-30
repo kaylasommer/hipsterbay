@@ -1,8 +1,24 @@
 extends ../shared/template
 block content
-  h2 Login
   .row
     .col-xs-6
+      h2.text-center Register
+    .col-xs-6
+      h2.text-center Login
+  .row
+    .col-xs-1
+    .col-xs-4
+      form(role='form', method='post', action='/register')
+        .form-group
+          label(for='email') Email
+          input.form-control#email(type='email', name='email', autofocus=true)
+        .form-group
+          label(for='password') Password
+          input.form-control#password(type='password', name='password')
+        button.btn.btn-primary(type='submit') Submit
+    .col-xs-1
+    .col-xs-1
+    .col-xs-4
       form(role='form', method='post', action='/login')
         .form-group
           label(for='email') Email
@@ -11,7 +27,7 @@ block content
           label(for='password') Password
           input.form-control#password(type='password', name='password')
         button.btn.btn-success(type='submit') Submit
-    .col-xs-6
+    .col-xs-1
 
 block scripts
 

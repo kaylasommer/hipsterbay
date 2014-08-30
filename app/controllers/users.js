@@ -2,27 +2,34 @@
 
 var User = require('../models/user');
 
-exports.new = function(req, res){
-  res.render('users/new');
-};
-
 exports.login = function(req, res){
   res.render('users/login');
 };
 
 exports.logout = function(req, res){
   req.session.destroy(function(){
-    res.redirect('/');
+    res.redirect('users/login');
   });
 };
 
 exports.create = function(req, res){
-  User.register(req.body, function(err, user){
-    if(user){
-      res.redirect('/');
-    }else{
-      res.redirect('/register');
-    }
+  var credentials = {
+    email: req.body.email,
+    password: req.body.password
+  };
+  User.register(credentials, function(err, user){
+    User.authenticate(credentials, function(user){
+      if(user){
+        req.session.regenerate(function(){
+          req.session.userId = user._id;
+          req.session.save(function(){
+            res.redirect('/user/profile');
+          });
+        });
+      }else{
+        res.redirect('/login');
+      }
+    });
   });
 };
 
@@ -32,7 +39,7 @@ exports.authenticate = function(req, res){
       req.session.regenerate(function(){
         req.session.userId = user._id;
         req.session.save(function(){
-          res.redirect('/');
+          res.redirect('/user/profile');
         });
       });
     }else{
@@ -41,3 +48,6 @@ exports.authenticate = function(req, res){
   });
 };
 
+exports.profile = function(req, res){
+  res.render('users/profile');
+};
