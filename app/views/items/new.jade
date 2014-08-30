@@ -7,6 +7,7 @@ block content
           .form-group
             label Name
             input.form-control(type='text' name='name', autofocus=true)
+            input.form-control(type='hidden' name='ownerId' value='#{user._id}')
           .form-group
             label Photo URL
             input.form-control(type='text' name='photo')
@@ -19,6 +20,7 @@ block content
           table.table
             tr
               th Available Items
+              #availabeItems
                 each item in availableItems
                   tr
                     td: a(href="/item/#{item._id}/show")= item.name
@@ -29,4 +31,5 @@ block content
                 each auction in auctions
                   tr
                     td: a(href="/auctions/#{auction._id}")= auction.name
-
+block scripts
+  script(src="/js/user/new.js")

@@ -14,3 +14,11 @@ exports.index = function(req, res){
     });
   });
 };
+
+
+exports.addItem = function(req, res){
+  //console.log(req.body);
+  Item.create(req.body, function(err, item){
+   res.json({item: item});
+  });
+};

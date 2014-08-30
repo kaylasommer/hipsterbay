@@ -4,7 +4,7 @@ var Mongo = require('mongodb');
 
 function Item(o){
   this.name        = o.name;
-  this.ownerId     = o.ownerId;
+  this.ownerId     = Mongo.ObjectID(o.ownerId);
   this.description = o.description;
   this.photo       = o.photo;
 
@@ -20,7 +20,9 @@ Object.defineProperty(Item, 'collection', {
 });
 
 Item.create = function(o, cb){
+  console.log(o);
   var item = new Item(o);
+  console.log(item);
   Item.collection.save(item, cb);
 };
 
