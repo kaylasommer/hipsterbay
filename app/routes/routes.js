@@ -39,7 +39,6 @@ module.exports = function(app, express){
   app.get('/items/manage', items.index);
   app.post('/items/add', items.addItem);
   app.get(['/auction/search', '/auction/search/:query'], auctions.search);
-  //app.get('/auction/search/:query', auctions.search);
   app.get('/auction/:auctionId', auctions.show);
   //app.post('/auction/:auctionId/accept', auctions.acceptSwap);
   //app.post('/auction/:auctionId/bid', auctions.bid);

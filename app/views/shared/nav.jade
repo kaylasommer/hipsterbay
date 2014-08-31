@@ -6,11 +6,14 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='#') Hipsterbay
+      a.navbar-brand(href='/auction/search') Hipsterbay
 
     .collapse.navbar-collapse#bs-navbar-collapse
       ul.nav.navbar-nav.navbar-right
         if user
+          form#search-form.navbar-form.navbar-left(role='search')
+              input.form-control#search(type='text' placeholder='Search')
+              button.btn.btn-default#search-button(type='submit') Go!
           li
             form.navbar-form(method='post', action='/logout')
               .form-group

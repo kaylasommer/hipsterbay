@@ -2,6 +2,7 @@
 
 var Mongo = require('mongodb'),
     async = require('async'),
+    User  = require('./user'),
     _     = require('lodash'),
     Item  = require('./item');
 
@@ -48,11 +49,20 @@ Auction.findAll = function(query, cb){
           auction.item = item;
           cb(null, auction);
         });
-      }, cb);
+      }, function(err, auctions){
+        async.map(auctions,
+          function(auction, cb){
+            User.findById(auction.ownerId, function(user){
+              auction.user = user;
+              cb(null, auction);
+            });
+          }, function(err, auctions){
+            cb(err, auctions);
+          });
+      });
   });
 };
 
-//Dave Note: Decided to call this more closely related to what it will be doing
 Auction.displayAuction = function(id, cb){
   var auctionId = Mongo.ObjectID(id);
   Auction.collection.findOne({_id: auctionId}, function(err, auction){

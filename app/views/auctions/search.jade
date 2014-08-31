@@ -3,25 +3,21 @@ block content
   .row
     h2.page-header Search Hipsterbay
       small  &nbsp Find the next hot thing!
-    hr
   .row
     .col-xs-3.sidebar
       ul.nav.side-bar#tag
         each tag in tags
           li: a(href='?tag=#{tag}')= tag
     .col-xs-9
-      form#search-form.navbar-form.navbar-left(role='search')
-        .form-group
-          input.form-control#search(type='text' placeholder='Search')
-          button.btn.btn-default#search-button(type='submit') Submit
         #map
-        .row
+        .row#userLocation(data-lat=user.loc.lat, data-lng=user.loc.lng)
+          h3.auctions-title Your Search Results:
           .col-xs-9.auctions
             if(auctions)
               each auction in auctions
-                p= auction.name
+                a.locationValue(href='#', data-name=auction.user.loc.name, data-lat=auction.user.loc.lat, data-lng=auction.user.loc.lng)= auction.name
             else
-              p We didn't find anything that matched that search.
+              p We didn't find anything that matched that search query.
               | You are way ahead of the curve!
 
 block scripts

@@ -27,7 +27,7 @@ exports.search = function(req, res){
       if(req.params.query){
         auctions = Auction.filterBySearchQuery(auctions, req.params.query);
       }
-      res.render('auctions/search', {tags:tags, auctions:auctions});
+      res.render('auctions/search', {tags:tags, auctions:auctions, user:res.locals.user});
     });
   });
 };
