@@ -1,6 +1,10 @@
 extends ../shared/template
 block content
-    h2 My Auctions
+    h2 Your offer: #{auction.itemForOffer.name}
+    .row
+      .col-xs-6
+        img.img-circular(src="#{auction.itemForOffer.photo}")
+    
 
 
 

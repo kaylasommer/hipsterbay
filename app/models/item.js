@@ -31,7 +31,7 @@ Item.findAvailable = function(id, cb){
 Item.findById = function(id, cb){
   var itemId = Mongo.ObjectID(id);
   Item.collection.findOne({_id: itemId}, cb);
-}
+};
 
 
 module.exports = Item;

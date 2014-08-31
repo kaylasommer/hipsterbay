@@ -1,7 +1,8 @@
 'use strict';
 
 var Mongo = require('mongodb'),
-    async = require('async');
+    async = require('async'),
+    Item  = require('./item');
 
 function Auction(){
 }
@@ -19,12 +20,15 @@ Auction.findByOwnerId = function(id, cb){
 Auction.displayAuction = function(id, cb){
   var auctionId = Mongo.ObjectID(id);
   Auction.collection.findOne({_id: auctionId}, function(err, auction){
-    if(!auction.bids.length) { return cb(auction);}
-    async.map(auction.bids, itemIterator, function(err, bidItems){ 
-      async.map(bidItems, bidderIterator, function(err, bidders){ 
-        auction.itemsForBid = bidItems;
-        auction.itemOwners = bidders;
-        cb(auction); 
+    Item.findById(auction.offeredItemId, function(err, item){
+      auction.itemForOffer = item;
+      if(!auction.bids.length) { return cb(auction);}
+      async.map(auction.bids, itemIterator, function(err, bidItems){
+        async.map(bidItems, bidderIterator, function(err, bidders){
+          auction.itemsForBid = bidItems;
+          auction.itemOwners = bidders;
+          cb(auction);
+        });
       });
     });
   });
@@ -35,7 +39,7 @@ module.exports = Auction;
 //Private Functions
 function itemIterator(itemId, cb){
   var itemsList;
-  require('./item').findById(itemId, function(err, item){
+  Item.findById(itemId, function(err, item){
     itemsList = item;
     cb(null, itemsList);
   });
