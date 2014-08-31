@@ -16,7 +16,8 @@ exports.show = function(req, res){
 
 exports.search = function(req, res){
   Tag.findAll(function(tags){
-    Auction.filterTags({tag: req.query.tag}, function(err, auctions){
+    var query = req.query.tag ? {tag: req.query.tag} : {};
+    Auction.filterTags(query, function(err, auctions){
       res.render('auctions/search', {tags:tags, auctions:auctions});
     });
   });
