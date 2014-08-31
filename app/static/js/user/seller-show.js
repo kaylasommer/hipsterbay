@@ -5,9 +5,6 @@
     var $radio = $('input[type="radio"]');
     $radio.on('focus', showSwapButton);
     $radio.on('blur', hideSwapButton);
-
-
-      
   });
 
   function showSwapButton(){

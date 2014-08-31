@@ -36,8 +36,7 @@ describe('Auction', function(){
     it('should display an auction with items and the bidders of those items', function(done){
       Auction.displayAuction('a20000000000000000000000', function(auction){
         expect(auction.ownerId).to.be.instanceof(Mongo.ObjectID);
-        expect(auction.bids).to.have.length(1);
-        //expect(auction.bidders).to.have.length(1);
+        expect(auction.bids).to.have.length(2);
         done();
       });
     });
