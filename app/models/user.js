@@ -50,5 +50,9 @@ User.prototype.unread = function(cb){
   require('./message').unread(this._id, cb);
 };
 
+User.prototype.send = function(receiver, obj, cb){
+  require('./message').send(this._id, receiver, obj.message, cb);
+};
+
 module.exports = User;
 

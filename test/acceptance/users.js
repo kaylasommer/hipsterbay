@@ -134,5 +134,30 @@ describe('users', function(){
     });
   });
 
+  describe('get /messages/:receiverId/send', function(done){
+    it('should take you to message send page', function(done){
+      request(app)
+      .get('/message/000000000000000000000002/send')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        done();
+      });
+    });
+  });
+
+  describe('post /message/2', function(done){
+    it('should redirect to', function(done){
+      request(app)
+      .post('/message/000000000000000000000002')
+      .set('cookie', cookie)
+      .send('message=testMsg')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
+
 });//end
 

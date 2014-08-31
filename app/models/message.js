@@ -5,7 +5,13 @@ var async = require('async'),
     _     = require('lodash'),
     User  = require('./user');
 
-function Message(){
+
+function Message(senderId, receiverId, message){
+  this.senderId   = senderId;
+  this.receiverId = receiverId;
+  this.message    = message;
+  this.date       = new Date();
+  this.isRead     = false;
 }
 
 Object.defineProperty(Message, 'collection', {
@@ -42,4 +48,9 @@ Message.findById = function(id, cb){
   });
 };
 
-module.exports = Message;
+Message.send = function(senderId, receiverId, message, cb){
+  var m = new Message(senderId, receiverId, message);
+  Message.collection.save(m, cb);
+};
+
+module.exports=Message;
