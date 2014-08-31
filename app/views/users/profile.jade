@@ -1,0 +1,45 @@
+extends ../shared/template
+block content
+  .row
+    .col-xs-6
+      a.thumbnail(href='#')
+        img(src=user.photo)
+      .col-xs-2
+      .col-xs-6
+        h2= user.alias
+        h5= user.email
+      .col-xs-2
+    .col-xs-6
+      table.table.table-striped.table-hover.table-bordered
+        thead
+          tr
+            th Phone
+            th Location
+        body
+          tr
+            td= user.phone
+            td= user.loc.name
+      form#edit-profile(role='form', method='post', action='/user/profile')
+        input(type='hidden', name='_method', value='put')
+        .form-group
+          label(for='email') Email
+          input.form-control#email(type='email', name='email', value=user.email, autofocus=true)
+        .form-group
+          label(for='alias') Alias
+          input.form-control#alias(type='text', name='alias', value=user.alias)
+        .form-group
+          label(for='phone') Phone
+          input.form-control#phone(type='tel', name='phone', value=user.phone)
+        .form-group
+          label(for='photo') Photo
+          input.form-control#photo(type='text', name='photo', value=user.photo)
+        .form-group
+          label(for='loc[name]') Location
+          input.form-control#loc(type='text', name='loc[name]', value=user.loc.name)
+          input#lat(type='hidden', name='loc[lat]')
+          input#lng(type='hidden', name='loc[lng]')
+        button#edit-profile-submit.btn.btn-primary(type='submit') Submit
+
+
+block scripts
+  script(src='/js/user/map.js')

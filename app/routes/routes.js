@@ -32,7 +32,7 @@ module.exports = function(app, express){
   app.use(security.bounce);
   app.delete('/logout', users.logout);
   app.get('/user/profile', users.profile);
-  //app.post('/user/profile', users.editProfile);
+  app.put('/user/profile', users.editProfile);
   app.get('/items/manage', items.index);
   app.post('/items/add', items.addItem);
   //app.get('/items/:itemId/show', items.show); //Kayla, I changed this route from /items/show to what you see here

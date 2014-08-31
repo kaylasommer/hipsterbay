@@ -49,5 +49,14 @@ exports.authenticate = function(req, res){
 };
 
 exports.profile = function(req, res){
-  res.render('users/profile');
+  User.findById(res.locals.user._id, function(user){
+    res.render('users/profile', {user:user});
+  });
 };
+
+exports.editProfile = function(req, res){
+  res.locals.user.update(req.body, function(err, user){
+    res.redirect('/user/profile');
+  });
+};
+

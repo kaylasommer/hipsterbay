@@ -79,5 +79,34 @@ describe('users', function(){
     });
   });
 
+  describe('get /user/profile', function(){
+    it('should show the edit profile page', function(done){
+      request(app)
+      .get('/user/profile')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('phone');
+        expect(res.text).to.include('Email');
+        expect(res.text).to.include('Photo');
+        expect(res.text).to.include('alias');
+        done();
+      });
+    });
+  });
+
+  describe('put /user/profile', function(){
+    it('should post and redirect to profile page', function(done){
+      request(app)
+      .put('/user/profile')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        expect(res.headers.location).to.equal('/user/profile');
+        done();
+      });
+    });
+  });
+
 });
 
