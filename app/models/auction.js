@@ -8,8 +8,8 @@ var Mongo = require('mongodb'),
 function Auction(o){
   this.name          = o.name;
   this.bids          = [];
-  this.offeredItemId = o.offeredItemId;
-  this.ownerId       = o.ownerId;
+  this.offeredItemId = Mongo.ObjectID(o.offeredItemId);
+  this.ownerId       = Mongo.ObjectID(o.ownerId);
   this.tag           = [];
 }
 
@@ -24,7 +24,10 @@ Auction.findByOwnerId = function(id, cb){
 
 Auction.create = function(o, cb){
   var auction = new Auction(o);
-  Auction.collection.save(auction, cb);
+console.log(auction, o.offeredItemId);
+  Item.collection.update({_id: auction.offeredItemId}, {$set: {isForOffer: true, isAvailable: false}}, function(){
+    Auction.collection.save(auction, cb);
+  });
 };
 
 Auction.filterBySearchQuery = function(auctions, query){

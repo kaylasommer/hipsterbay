@@ -5,7 +5,7 @@ var Auction = require('../models/auction'),
 
 exports.new = function(req, res){
   Auction.create(req.body, function(){
-    res.redirect('/items/auctionId');
+    res.redirect('/items/manage');
   });
 };
 
