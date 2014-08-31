@@ -11,6 +11,8 @@
     .collapse.navbar-collapse#bs-navbar-collapse
       ul.nav.navbar-nav.navbar-right
         if user
+          li: a(href='/user/profile') Edit Profile
+          li: a(href='/items/manage') Manage Items
           form#search-form.navbar-form.navbar-left(role='search')
               input.form-control#search(type='text' placeholder='Search')
               button.btn.btn-default#search-button(type='submit') Go!

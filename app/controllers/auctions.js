@@ -31,3 +31,7 @@ exports.search = function(req, res){
     });
   });
 };
+
+exports.congrats = function(req, res){
+  res.render('auctions/congrats');
+};
