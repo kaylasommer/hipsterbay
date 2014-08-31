@@ -1,14 +1,18 @@
 extends ../shared/template
 block content
-    h2 Your offer: #{auction.name}
-    .row
-      .col-xs-6
-        img.img-rounded(src="#{auction.itemForOffer.photo}")
-      .col-xs-6
-        .row 
-          .col-xs-12: h4 Description
-        .row
-          .col-xs-12 #{auction.itemForOffer.description}
+  h4.page-header Select the Winning Trade!
+    small #{auction.name}
+  .row
+    .col-xs-3
+    .col-xs-3
+      h4.page-header Your offer:   &nbsp
+        small #{auction.name}
+      img.img-rounded.thumbnail(src="#{auction.itemForOffer.photo}")
+    .col-xs-6
+      .row
+        .col-xs-12: h4 Description
+      .row
+        .col-xs-12 #{auction.itemForOffer.description}
     br
     if auction.bids.length
       each bid, index in auction.itemsForBid

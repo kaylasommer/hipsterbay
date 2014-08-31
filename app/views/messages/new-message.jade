@@ -1,11 +1,16 @@
 extends ../shared/template
 block content
-   .panel.panel-default
-      .panel-body
-          form(role='form', method='post', action='/message/#{receiver._id}')
-            .row
-              .col-xs-6
+  .row.send
+    h2.text-center.sendMessage Send a Message
+    .row
+      .col-xs-3
+      .col-xs-6
+        .panel.panel-default
+          .panel-body
+            form(role='form', method='post', action='/message/#{receiver._id}')
+              .row
+                .col-xs-12
                   label(for='message') Message
-                  textarea.form-control#message(name='message', autofocus=true)
-                .form-group
+                  textarea.form-control#message(name='message', autofocus=true, rows='10')
                   button.btn.btn-info.btn-sm(type='submit') Send Message
+    .col-xs-3

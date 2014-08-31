@@ -1,25 +1,18 @@
 extends ../shared/template
 block content
   .row
-    .col-xs-6
-      a.thumbnail(href='#')
-        img(src=client.photo)
+    .col-xs-1
+    .col-xs-5
+      img.profile-pic.img-rounded(src=client.photo)
       .col-xs-2
-      .col-xs-6
+      .col-xs-6.well.profile-info
         h2= client.alias
         h5= client.email
+        h5= client.phone
+        h5= client.loc.name
         a(href='/items/manage') Manage Items
       .col-xs-2
-    .col-xs-6
-      table.table.table-striped.table-hover.table-bordered
-        thead
-          tr
-            th Phone
-            th Location
-        body
-          tr
-            td= client.phone
-            td= client.loc.name
+    .col-xs-5
       form#edit-profile(role='form', method='post', action='/user/profile')
         input(type='hidden', name='_method', value='put')
         .form-group
@@ -40,6 +33,7 @@ block content
           input#lat(type='hidden', name='loc[lat]')
           input#lng(type='hidden', name='loc[lng]')
         button#edit-profile-submit.btn.btn-primary(type='submit') Submit
+      .col-xs-1
 
 
 block scripts

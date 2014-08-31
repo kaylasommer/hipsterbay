@@ -1,24 +1,30 @@
 extends ../shared/template
 block content
   .row
-    .col-xs-4
-          h2= item.name
-          img(src=item.photo)#showImg.thumbnail
-          p= item.description
-    .col-xs-4
+    h2.page-header= item.name
+  .row
+    .col-xs-1
+    .col-xs-3
+      img(src=item.photo).thumbnail
+      p= item.description
+    .col-xs-2
+    .col-xs-4#edit-item
       form(role='form', method='post', action='/items/auction/')
         input#ownwerId(type='hidden', name='ownerId', value= item.ownerId)
         input#offeredItemId(type='hidden', name='offeredItemId', value= item._id)
         .form-group
           label(for='name') Name
-          input.form-control#auctionName(type='text', name='name',placeholder='Give a short description', autofocus=true)
+          input.form-control#auctionName(type='text', name='name', placeholder='Give a short description', autofocus=true)
         .form-group
           label(for='tag') Tag
           select.form-control#tag(name='tag')
             each tag in tags
               option(value= tag)= tag
-          button.btn.btn-primary(type='submit') Add to Auction
+
+        button.btn.btn-primary(type='submit') Add to Auction
+
+      h5 Remove this item from your list?
       form(method='post', action='/items/#{item._id}')
-            input(type='hidden', name='_method', value='delete')
-            button.btn.btn-danger(type='submit') Delete 
-    .col-xs-4
+        input(type='hidden', name='_method', value='delete')
+        button.btn.btn-danger(type='submit') Delete 
+    .col-xs-1

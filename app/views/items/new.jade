@@ -1,8 +1,9 @@
 extends ../shared/template
 block content
-    h2 Item Management
+    h2.page-header Item Management
     .row
-      .col-xs-6
+      .col-xs-1
+      .col-xs-5
         form#add-item(method='post' action='/items/add')
           .form-group
             label Name
@@ -14,8 +15,8 @@ block content
           .form-group
             label Description
             textarea(style="width: 100%; height: 200px; resize: none;" name='description')
-          button(type='submit') Add Item
-      .col-xs-6
+          button.btn.btn-success(type='submit') Add Item
+      .col-xs-5
         .row
           table.table#availableItems
             tr
@@ -24,11 +25,12 @@ block content
                     tr
                       td: a(href="/items/#{item._id}/show")= item.name
         .row
-          table.table
+          table.table#myAuctions
             tr
               th My Auctions
                 each auction in auctions
                   tr
                     td: a(href="/auction/#{auction._id}")= auction.name
+      .col-xs-1
 block scripts
   script(src="/js/user/new.js")

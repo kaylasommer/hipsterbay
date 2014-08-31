@@ -1,22 +1,23 @@
 extends ../shared/template
 block content
-
-  h2 Inbox
-  each message in messages
-    .message
-      h4 From #{message.sender.alias}
-      h6 Date #{moment(message.date).format('MMM D YYYY')}
-      p= message.message
-      a(href='/message/'+message.sender._id+'/send').btn.btn-success Reply
-      form(role='form', method='post', action='/message/'+message._id.toString()+'/toggleRead')
-        .radio-buttons
-          label.radio-inline
-            input#inlineRadio1(type='radio', name='isRead', value=true)
-            p Read
-          label.radio-inline
-            input#inlineRadio2(type='radio', name='isRead', value=false)
-            p Unread
-          button.btn.btn-primary(type='submit') Submit
+  .row
+    .col-xs-12.inbox
+      h2.text-center.inboxMessage Inbox
+      each message in messages
+        .row
+          .col-xs-3
+          .col-xs-6
+            .message
+              .panel.panel-default
+                .panel-body
+                  h4 From #{message.sender.alias}
+                  h6 Date #{moment(message.date).format('MMM D YYYY')}
+                  p= message.message
+                  form(role='form', method='post', action='/message/'+message._id.toString()+'/toggleRead')
+                    input(type='hidden', name='isRead', value=true)
+                    a(href='/message/'+message.sender._id+'/send').btn.btn-success Reply
+                    button.btn.btn-primary(type='submit') Mark Read
+          .col-xs-3
 
 
 block scripts

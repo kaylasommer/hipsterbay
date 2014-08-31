@@ -1,23 +1,125 @@
+@grey-accent: rgba(220, 220, 220, 0.18);
+
 //general
 body{
   .navbar {
     margin-bottom: 0;
+    border-radius: 0;
   }
   .wrapper {
     margin: 0;
+    padding: 0;
+  }
+  .badge {
+    margin-left: 5px;
   }
 }
+//--------------------
+//Edit Profile 
+//--------------------
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+}
+.profile-info {
+  text-align: center;
+  margin-left: 100px;
+  border-radius: 4%;
+}
+form#edit-profile {
+  margin-top: 60px;
+}
+//--------------------
+//Edit Profile End
+//--------------------
+//--------------------
+//Add Item
+//--------------------
+#add-item {
+  margin-bottom: 50px;
+}
+//--------------------
+//Add Item End
+//--------------------
 //--------------------
 //edit.jade
 //--------------------
 
-#showImg {
-height: 200px;
+#edit-item {
+  margin-bottom: 100px;
 }
+
 //--------------------
 //edit.jade END
 //--------------------
 
+//--------------------
+//Inbox
+//--------------------
+
+.inbox {
+  background-image: url('/img/can.png');
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  background-repeat: no-repeat;
+  margin: 0;
+  
+  .inboxMessage {
+    padding-bottom: 80px;
+  }
+
+  .btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 10px;
+  }
+}
+
+//--------------------
+//Inbox End
+//--------------------
+
+//--------------------
+//Send
+//--------------------
+
+.send {
+  background-image: url('/img/typewriter.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  background-repeat: no-repeat;
+  margin: 0;
+  
+  .sendMessage {
+    color: white;
+  }
+
+  .col-xs-6 {
+    margin-top: 80px;
+
+    .panel {
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+
+      textarea {
+        opacity: .8;
+      }
+
+      .btn {
+        float: right;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+//--------------------
+//Send End
+//--------------------
 
 //--------------------
 //seller-show.jade
@@ -58,9 +160,10 @@ form[id='acceptBid'] {
 //--------------------
 h2.page-header {
   padding: 40px 20px 40px;
-  background-color: rgba(220, 220, 220, 0.18);
+  background-color: @grey-accent;
   margin: 0;
   margin-bottom: 20px;
+  text-align: center;
 }
 .nav#tag {
   border-left: 2px solid rgba(128, 128, 128, 0.35);
@@ -87,6 +190,7 @@ h2.page-header {
 input#search {
   border: none;
   background-color: #3C5166;
+  color: white;
 }
 h3.auctions-title {
   padding-left: 20px;

@@ -4,11 +4,12 @@ block content
     h2.page-header Search Hipsterbay
       small  &nbsp Find the next hot thing!
   .row
-    .col-xs-3.sidebar
+    .col-xs-1
+    .col-xs-2.sidebar
       ul.nav.side-bar#tag
         each tag in tags
           li: a(href='/auction/search?tag=#{tag}')= tag
-    .col-xs-9
+    .col-xs-7
         #map
         .row#userLocation(data-lat=user.loc.lat, data-lng=user.loc.lng)
           h3.auctions-title Your Search Results:
@@ -19,6 +20,7 @@ block content
             else
               p We didn't find anything that matched that search query.
               | You are way ahead of the curve!
+    .col-xs-2
 
 block scripts
   script(src='/js/user/search.js')
