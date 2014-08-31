@@ -74,3 +74,14 @@
     "isForBid" : false,
     "isAvailable" : false
 }
+
+{
+    "_id" : {"$oid" : "00000000000000000000002a"},
+    "name" : "Old Tire",
+    "ownerId" : {"$oid": "000000000000000000000001"},
+    "description" : "Perfectly good tire. Great for tire swings",
+    "photo" : "http://automotivethinker.com/wp-content/uploads/2012/03/oldTire.jpg",
+    "isForOffer" : false,
+    "isForBid" : true,
+    "isAvailable" : false
+}
