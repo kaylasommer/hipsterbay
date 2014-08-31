@@ -40,4 +40,37 @@ describe('users', function(){
       });
     });
   });
+
+  describe('get /auction/:auctionId', function(done){
+    it('should take a logged in user to see their personal auctions', function(done){
+      request(app)
+      .get('/auction/a30000000000000000000000')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        done();
+      });
+    });
+    it('should take a logged in user to someones auction page', function(done){
+      request(app)
+      .get('/auction/a20000000000000000000000')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        done();
+      });
+    });
+  });
+
+  describe('get /auction/search', function(){
+    it('should fetch the the search page', function(done){
+      request(app)
+      .get('/auction/search')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        done();
+      });
+    });
+  });
 });

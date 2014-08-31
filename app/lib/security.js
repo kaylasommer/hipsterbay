@@ -5,7 +5,7 @@ var User = require('../models/user');
 exports.authenticate = function(req, res, next){
   if(!req.session.userId){return next();}
 
-  User.findById(req.session.userId, function(err, user){
+  User.findById(req.session.userId, function(user){
     res.locals.user = user;
     next();
   });

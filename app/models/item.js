@@ -8,7 +8,6 @@ function Item(o){
   this.description = o.description;
   this.photo       = o.photo;
 
-  //private properties
   this.isForOffer  = false;
   this.isForBid    = false;
   this.isAvailable = true;
@@ -20,9 +19,7 @@ Object.defineProperty(Item, 'collection', {
 });
 
 Item.create = function(o, cb){
-  console.log(o);
   var item = new Item(o);
-  console.log(item);
   Item.collection.save(item, cb);
 };
 

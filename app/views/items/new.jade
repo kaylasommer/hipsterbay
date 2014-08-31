@@ -1,0 +1,34 @@
+extends ../shared/template
+block content
+    h2 Item Management
+    .row
+      .col-xs-6
+        form#add-item(method='post' action='/items/add')
+          .form-group
+            label Name
+            input.form-control(type='text' name='name', autofocus=true)
+            input.form-control(type='hidden' name='ownerId' value='#{user._id}')
+          .form-group
+            label Photo URL
+            input.form-control(type='text' name='photo')
+          .form-group
+            label Description
+            textarea(style="width: 100%; height: 200px; resize: none;" name='description')
+          button(type='submit') Add Item
+      .col-xs-6
+        .row
+          table.table#availableItems
+            tr
+              th Available Items
+                  each item in availableItems
+                    tr
+                      td: a(href="/item/#{item._id}/show")= item.name
+        .row
+          table.table
+            tr
+              th My Auctions
+                each auction in auctions
+                  tr
+                    td: a(href="/auction/#{auction._id}")= auction.name
+block scripts
+  script(src="/js/user/new.js")

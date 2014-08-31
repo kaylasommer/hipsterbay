@@ -22,7 +22,7 @@ module.exports = function(app, express){
   app.use(session({store:new RedisStore(), secret:'my super secret key', resave:true, saveUninitialized:true, cookie:{maxAge:null}}));
 
   app.use(security.authenticate);
-  app.use(debug.info);
+  //app.use(debug.info);
 
   app.get('/', home.index);
   app.post('/register', users.create);
@@ -32,15 +32,16 @@ module.exports = function(app, express){
   app.use(security.bounce);
   app.delete('/logout', users.logout);
   app.get('/user/profile', users.profile);
-  //app.post('/user/profile', users.editProfile);
-  //app.get('/items/manage', items.index);
-  //app.post('/items/add', items.addItem);
   app.get('/items/:itemId/show', items.show);
   app.delete('/items/:itemId', items.delete);
   app.post('/items/auction', auctions.new);
-  //app.get('/auction/:auctionId', auctions.show);
+  app.put('/user/profile', users.editProfile);
+  app.get('/items/manage', items.index);
+  app.post('/items/add', items.addItem);
+  app.get(['/auction/search', '/auction/search/:query'], auctions.search);
+  //app.get('/auction/search/:query', auctions.search);
+  app.get('/auction/:auctionId', auctions.show);
   //app.post('/auction/:auctionId/accept', auctions.acceptSwap);
-  //app.get('/auction/search', auctions.search);
   //app.post('/auction/:auctionId/bid', auctions.bid);
   //app.post('/message/:ownerId', users.send);
   //app.post('/message/reply', users.reply);

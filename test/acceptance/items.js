@@ -40,6 +40,19 @@ describe('users', function(){
       });
     });
   });
+
+  describe('get /items/manage', function(){
+    it('should show the item management page where users can create new items', function(done){
+      request(app)
+      .get('/items/manage')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        done();
+      });
+    });
+  });
+
   describe('delete /items/:itemId', function(done){
     it('should delete an item', function(done){
       request(app)
@@ -47,6 +60,22 @@ describe('users', function(){
       .set('cookie', cookie)
       .end(function(err, res){
         expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
+
+  describe('post /items/add', function(){
+    it('should create a new available item', function(done){
+      request(app)
+      .post('/items/add')
+      .set('cookie', cookie)
+      .send('name=Test+Item&ownerId=000000000000000000000002&photo=test.jpg&description=Testing+description')
+      .end(function(err, res){
+        expect(res.text).to.include('Test');
+        expect(res.text).to.include('000000000000000000000002');
+        expect(res.text).to.include('test.jpg');
+        expect(res.text).to.include('Testing');
         done();
       });
     });
