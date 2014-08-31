@@ -9,7 +9,9 @@ var morgan         = require('morgan'),
     security       = require('../lib/security'),
     debug          = require('../lib/debug'),
     home           = require('../controllers/home'),
-    users          = require('../controllers/users');
+    users          = require('../controllers/users'),
+    auctions       = require('../controllers/auctions'),
+    items          = require('../controllers/items');
 
 module.exports = function(app, express){
   app.use(morgan('dev'));
@@ -33,9 +35,9 @@ module.exports = function(app, express){
   //app.post('/user/profile', users.editProfile);
   //app.get('/items/manage', items.index);
   //app.post('/items/add', items.addItem);
-  //app.get('/items/show', items.show);
-  //app.delete('/items/:itemId', items.delete);
-  //app.post('/items/auction', auctions.new);
+  app.get('/items/:itemId/show', items.show);
+  app.delete('/items/:itemId', items.delete);
+  app.post('/items/auction', auctions.new);
   //app.get('/auction/:auctionId', auctions.show);
   //app.post('/auction/:auctionId/accept', auctions.acceptSwap);
   //app.get('/auction/search', auctions.search);
