@@ -30,3 +30,51 @@
   "isRead"  : false,
   "Date":{"$date":1409356800000}
 }
+{
+  "_id" : {"$oid":"aa0000000000000000000005"},
+  "senderId" : {"$oid":"000000000000000000000003"},
+  "receiverId" : {"$oid":"000000000000000000000004"},
+  "message" : "I have been feeling cold is that hot?",
+  "isRead"  : false,
+  "Date":{"$date":1409097600000}
+  }
+{
+  "_id" : {"$oid":"aa0000000000000000000006"},
+  "senderId" : {"$oid":"000000000000000000000004"},
+  "receiverId" : {"$oid":"000000000000000000000003"},
+  "message" : "Yo Grandmama!! What you see is what you get, take it or leave it.",
+  "isRead"  : false,
+  "Date":{"$date":1409184000000}
+  }
+{
+  "_id" : {"$oid":"aa0000000000000000000007"},
+  "senderId" : {"$oid":"000000000000000000000003"},
+  "receiverId" : {"$oid":"000000000000000000000004"},
+  "message" : "In that case, thank you but no thank you.",
+  "isRead"  : false,
+  "Date":{"$date":1409270400000}
+  }
+{
+  "_id" : {"$oid":"aa0000000000000000000008"},
+  "senderId" : {"$oid":"000000000000000000000004"},
+  "receiverId" : {"$oid":"000000000000000000000005"},
+  "message" : "Are you looking for more hair? I have some extra to spare",
+  "isRead"  : false,
+  "Date":{"$date":1409356800000}
+}
+{
+  "_id" : {"$oid":"aa0000000000000000000009"},
+  "senderId" : {"$oid":"000000000000000000000001"},
+  "receiverId" : {"$oid":"000000000000000000000004"},
+  "message" : "I like your stuff, would you like to trade?",
+  "isRead"  : false,
+  "Date":{"$date":1409097600000}
+  }
+{
+  "_id" : {"$oid":"aa0000000000000000000010"},
+  "senderId" : {"$oid":"000000000000000000000002"},
+  "receiverId" : {"$oid":"000000000000000000000004"},
+  "message" : "I am not sure, let me think about it.",
+  "isRead"  : false,
+  "Date":{"$date":1409184000000}
+  }

@@ -1,17 +1,35 @@
 extends ../shared/template
 block content
-    h2 Auction For: #{auction.itemForOffer.name}
+    h2.center <strong>Auction For</strong>: #{auction.itemForOffer.name}
     .row
-      .col-xs-6
-        img.img-rounded(src="#{auction.itemForOffer.photo}")
-      .col-xs-6
-        a.btn.btn-warning.btn-lg(href='/message/#{auction.itemForOffer.ownerId}/send') Message Seller 
+      .col-xs-3
+      .col-xs-3
+        img.img-border.img-responsive.img-rounded(src="#{auction.itemForOffer.photo}")
+      .col-xs-3
         .row 
-          .col-xs-12: h4 Description
+          .col-xs-12: h3 Item Description
         .row
-          .col-xs-12 #{auction.itemForOffer.description}
+          .col-xs-12.item-description #{auction.itemForOffer.description}
+        .row
+    .row
+          .col-xs-2
+          .col-xs-8
+            if items.length
+              h3.center Bid for this item:
+              form(method='post' action='/auction/#{auction._id}/bid')
+                .form-group
+                  select.item-list(name='itemId')
+                    each item in items
+                      option.form-control(value='#{item._id}')= item.name
+                button.btn.btn-default.item-list(type='submit') Place Bid
+            else 
+              h2.center You have nothing to bid. Click 'Manage Items' to add some!
+            a.btn.btn-warning.btn-lg.contact(href='/message/#{auction.itemForOffer.ownerId}/send') Contact Seller 
+          .col-xs-2
 
     if auction.bids.length
+      h3.center Current Bids
+      hr
       each bid, index in auction.itemsForBid
         .panel.panel-primary.bid
           .panel-heading
@@ -21,17 +39,6 @@ block content
             h4 Owner: #{auction.itemOwners[index].alias}
             h3 Description
             .description= bid.description
-      if items.length
-        form(method='post' action='/auction/#{auction._id}/bid')
-          select(name='itemId')
-            each item in items
-              option(value='#{item._id}')= item.name
-          button.btn.btn-default(type='submit') Place Bid
-      else 
-        .row 
-          .col-xs-12: h2 You have nothing to bid. Click 'Manage Items' to add some!
-
-
     else
       .row
         .col-xs-12: h2 There are currently no bids on this item...

@@ -1,5 +1,6 @@
 extends ../shared/template
 block content
+<<<<<<< HEAD
   h4.page-header Select the Winning Trade!
     small #{auction.name}
   .row
@@ -14,7 +15,23 @@ block content
       .row
         .col-xs-12 #{auction.itemForOffer.description}
     br
+=======
+    h2.center <strong>Your auction:</strong> #{auction.name}
+    .row
+      .col-xs-3
+      .col-xs-3
+        img.img-border.img-responsive.img-circle(src="#{auction.itemForOffer.photo}")
+      .col-xs-3
+        .row
+          .col-xs-12: h3 Item Description:
+        .row
+          .col-xs-12.item-description #{auction.itemForOffer.description}
+      .col-xs-3
+
+>>>>>>> master
     if auction.bids.length
+      h3.center Bids For Your Item
+      hr
       each bid, index in auction.itemsForBid
        form(method='post' id='acceptBid' action='/auction/#{auction._id}/accept')
         .panel.panel-primary.bid
