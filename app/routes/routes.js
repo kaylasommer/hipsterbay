@@ -38,9 +38,9 @@ module.exports = function(app, express){
   //app.get('/items/:itemId/show', items.show); //Kayla, I changed this route from /items/show to what you see here
   //app.delete('/items/:itemId', items.delete);
   //app.post('/items/auction', auctions.new);
+  app.get('/auction/search', auctions.search);
   app.get('/auction/:auctionId', auctions.show);
   //app.post('/auction/:auctionId/accept', auctions.acceptSwap);
-  //app.get('/auction/search', auctions.search);
   //app.post('/auction/:auctionId/bid', auctions.bid);
   //app.post('/message/:ownerId', users.send);
   //app.post('/message/reply', users.reply);

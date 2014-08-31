@@ -43,7 +43,23 @@ describe('Auction', function(){
     });
   });
 
+  describe('.findAll', function(){
+    it('should find all the auctions', function(done){
+      Auction.findAll(function(err, auctions){
+        expect(auctions).to.have.length(3);
+        done();
+      });
+    });
+  });
 
-
+  describe('.filterTags', function(){
+    it('should filter the auctions by tag', function(done){
+      Auction.filterTags({tag:'Household Items'}, function(err, auctions){
+        expect(auctions).to.have.length.above(0);
+        expect(auctions[0].tag).to.equal('Household Items');
+        done();
+      });
+    });
+  });
 
 });

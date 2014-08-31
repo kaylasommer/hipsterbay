@@ -49,4 +49,16 @@ describe('users', function(){
     });
   });
 
+  describe('get /auction/search', function(){
+    it('should fetch the the search page', function(done){
+      request(app)
+      .get('/auction/search')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        done();
+      });
+    });
+  });
+
 });

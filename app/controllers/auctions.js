@@ -1,6 +1,7 @@
 'use strict';
 
-var Auction = require('../models/auction');
+var Auction = require('../models/auction'),
+    Tag = require('../models/tag');
 
 exports.show = function(req, res){
   Auction.displayAuction(req.params.auctionId, function(auction){
@@ -10,5 +11,13 @@ exports.show = function(req, res){
     }else{
       res.render('auctions/bidder-show', {auction:auction});
     }
+  });
+};
+
+exports.search = function(req, res){
+  Tag.findAll(function(tags){
+    Auction.filterTags({tag: req.query.tag}, function(err, auctions){
+      res.render('auctions/search', {tags:tags, auctions:auctions});
+    });
   });
 };

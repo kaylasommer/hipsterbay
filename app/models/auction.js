@@ -16,6 +16,14 @@ Auction.findByOwnerId = function(id, cb){
   Auction.collection.find({ownerId: ownerId}).toArray(cb);
 };
 
+Auction.findAll = function(cb){
+  Auction.collection.find().toArray(cb);
+};
+
+Auction.filterTags = function(query, cb){
+  Auction.collection.find(query).toArray(cb);
+};
+
 //Dave Note: Decided to call this more closely related to what it will be doing
 Auction.displayAuction = function(id, cb){
   var auctionId = Mongo.ObjectID(id);
