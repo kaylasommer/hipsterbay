@@ -1,21 +1,5 @@
 extends ../shared/template
 block content
-<<<<<<< HEAD
-  h4.page-header Select the Winning Trade!
-    small #{auction.name}
-  .row
-    .col-xs-3
-    .col-xs-3
-      h4.page-header Your offer:   &nbsp
-        small #{auction.name}
-      img.img-rounded.thumbnail(src="#{auction.itemForOffer.photo}")
-    .col-xs-6
-      .row
-        .col-xs-12: h4 Description
-      .row
-        .col-xs-12 #{auction.itemForOffer.description}
-    br
-=======
     h2.center <strong>Your auction:</strong> #{auction.name}
     .row
       .col-xs-3
@@ -28,7 +12,6 @@ block content
           .col-xs-12.item-description #{auction.itemForOffer.description}
       .col-xs-3
 
->>>>>>> master
     if auction.bids.length
       h3.center Bids For Your Item
       hr
