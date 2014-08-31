@@ -3,7 +3,7 @@
     "ownerId" : {"$oid": "000000000000000000000002"},
     "offeredItemId" :  {"$oid": "00000000000000000000000d"},
     "bids" : [],
-    "tag" : "vehicle",
+    "tag" : "Vehicles",
     "name": "2005 Pontiac Sunfire - Like New!"
 }
 
@@ -12,7 +12,7 @@
     "ownerId" : {"$oid": "000000000000000000000002"},
     "offeredItemId" :  {"$oid": "00000000000000000000000e"},
     "bids" : ["00000000000000000000000f", "00000000000000000000002a"], 
-    "tag" : "household",
+    "tag" : "Household Items",
     "name": "Scream 3 Movie Prop! Details inside! HURRY!"
 }
 
@@ -21,6 +21,6 @@
     "ownerId" : {"$oid": "000000000000000000000001"},
     "offeredItemId" :  {"$oid": "00000000000000000000001a"},
     "bids" : [], 
-    "tag" : "other",
+    "tag" : "Other",
     "name": "Ever needed a kidney but didn't know where to get it? Inquire here!"
 }

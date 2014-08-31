@@ -42,7 +42,25 @@ describe('Auction', function(){
     });
   });
 
+  describe('.findAll', function(){
+    it('should filter the auctions by tag', function(done){
+      Auction.findAll({tag:'Household Items'}, function(err, auctions){
+        expect(auctions).to.have.length.above(0);
+        expect(auctions[0].item).to.not.be.a('null');
+        expect(auctions[0].tag).to.equal('Household Items');
+        done();
+      });
+    });
+  });
 
-
-
+  describe('.filterBySearchQuery', function(){
+    it('should filter by the search query', function(done){
+      Auction.findAll({}, function(err, auctions){
+        var query = 'kidney',
+            filtered = Auction.filterBySearchQuery(auctions, query);
+        expect(filtered[0].item.name).to.equal('Bob\'s Kidney');
+        done();
+      });
+    });
+  });
 });

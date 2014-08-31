@@ -8,6 +8,7 @@ block content
       .col-xs-6
         h2= user.alias
         h5= user.email
+        a(href='/items/manage') Manage Items
       .col-xs-2
     .col-xs-6
       table.table.table-striped.table-hover.table-bordered
@@ -42,4 +43,4 @@ block content
 
 
 block scripts
-  script(src='/js/user/map.js')
+  script(src='/js/user/geocode-form.js')

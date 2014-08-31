@@ -1,0 +1,28 @@
+extends ../shared/template
+block content
+  .row
+    h2.page-header Search Hipsterbay
+      small  &nbsp Find the next hot thing!
+    hr
+  .row
+    .col-xs-3.sidebar
+      ul.nav.side-bar#tag
+        each tag in tags
+          li: a(href='?tag=#{tag}')= tag
+    .col-xs-9
+      form#search-form.navbar-form.navbar-left(role='search')
+        .form-group
+          input.form-control#search(type='text' placeholder='Search')
+          button.btn.btn-default#search-button(type='submit') Submit
+        #map
+        .row
+          .col-xs-9.auctions
+            if(auctions)
+              each auction in auctions
+                p= auction.name
+            else
+              p We didn't find anything that matched that search.
+              | You are way ahead of the curve!
+
+block scripts
+  script(src='/js/user/search.js')
