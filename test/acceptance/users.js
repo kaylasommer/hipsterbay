@@ -2,7 +2,7 @@
 
 'use strict';
 
-process.env.DB   = 'template-test';
+process.env.DB   = 'hippie-test';
 
 var expect  = require('chai').expect,
     cp      = require('child_process'),
@@ -108,5 +108,18 @@ describe('users', function(){
     });
   });
 
-});
+  describe('get /auction/search/:query', function(){
+    it('should fetch the search page', function(done){
+      request(app)
+      .get('/auction/search/:query')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('Search');
+        done();
+      });
+    });
+  });
+
+});//end
 

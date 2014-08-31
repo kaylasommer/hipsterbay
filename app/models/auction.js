@@ -2,6 +2,7 @@
 
 var Mongo = require('mongodb'),
     async = require('async'),
+    _     = require('lodash'),
     Item  = require('./item');
 
 function Auction(){
@@ -16,12 +17,26 @@ Auction.findByOwnerId = function(id, cb){
   Auction.collection.find({ownerId: ownerId}).toArray(cb);
 };
 
-Auction.findAll = function(cb){
-  Auction.collection.find().toArray(cb);
+Auction.filterBySearchQuery = function(auctions, query){
+  query = query.toLowerCase();
+  var filtered = _.filter(auctions, function(auction){
+    var name = auction.item.name.toLowerCase(),
+        description = auction.item.description.toLowerCase();
+    return _.contains(name, query) || _.contains(description, query);
+  });
+  return filtered;
 };
 
-Auction.filterTags = function(query, cb){
-  Auction.collection.find(query).toArray(cb);
+Auction.findAll = function(query, cb){
+  Auction.collection.find(query).toArray(function(err, auctions){
+    async.map(auctions,
+      function(auction, cb){
+        Item.findById(auction.offeredItemId, function(err, item){
+          auction.item = item;
+          cb(null, auction);
+        });
+      }, cb);
+  });
 };
 
 //Dave Note: Decided to call this more closely related to what it will be doing

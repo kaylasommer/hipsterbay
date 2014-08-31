@@ -16,8 +16,12 @@ exports.show = function(req, res){
 
 exports.search = function(req, res){
   Tag.findAll(function(tags){
-    var query = req.query.tag ? {tag: req.query.tag} : {};
-    Auction.filterTags(query, function(err, auctions){
+    var filter = req.query.tag ? {tag: req.query.tag} : {};
+
+    Auction.findAll(filter, function(err, auctions){
+      if(req.params.query){
+        auctions = Auction.filterBySearchQuery(auctions, req.params.query);
+      }
       res.render('auctions/search', {tags:tags, auctions:auctions});
     });
   });
