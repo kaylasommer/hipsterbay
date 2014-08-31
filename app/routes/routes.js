@@ -44,6 +44,8 @@ module.exports = function(app, express){
   app.post('/auction/:auctionId/accept', auctions.acceptSwap);
   //app.post('/auction/:auctionId/bid', auctions.bid);
   //app.post('/message/:ownerId', users.send);
+  app.get('/message/inbox', users.inbox);
+  app.post('/message/:messageId/toggleRead', users.toggleRead);
   //app.post('/message/reply', users.reply);
 
   console.log('Express: Routes Loaded');

@@ -46,5 +46,9 @@ User.prototype.update = function(o, cb){
   User.collection.update({_id: this._id}, {$set: o}, cb);
 };
 
+User.prototype.unread = function(cb){
+  require('./message').unread(this._id, cb);
+};
+
 module.exports = User;
 

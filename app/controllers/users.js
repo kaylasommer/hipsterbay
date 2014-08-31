@@ -1,6 +1,8 @@
 'use strict';
 
-var User = require('../models/user');
+var User = require('../models/user'),
+    Message = require('../models/message'),
+    moment = require('moment');
 
 exports.login = function(req, res){
   res.render('users/login');
@@ -60,3 +62,17 @@ exports.editProfile = function(req, res){
   });
 };
 
+exports.inbox = function(req, res){
+  Message.findByReceiverId(res.locals.user._id, function(err, messages){
+    res.render('messages/inbox', {messages:messages, moment:moment});
+  });
+};
+
+exports.toggleRead = function(req, res){
+  Message.findById(req.params.messageId, function(message){
+    message.isRead = !message.isRead;
+    message.save(function(){
+      res.redirect('/message/inbox');
+    });
+  });
+};

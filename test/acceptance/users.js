@@ -121,5 +121,18 @@ describe('users', function(){
     });
   });
 
+  describe('get /message/inbox', function(){
+    it('should open an users inbox', function(done){
+      request(app)
+      .get('/message/inbox')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('Inbox');
+        done();
+      });
+    });
+  });
+
 });//end
 
