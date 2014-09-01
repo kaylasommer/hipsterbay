@@ -15,4 +15,5 @@
     $(this).closest('.bid').find('button').fadeOut(500);
   }
 
+
 })();

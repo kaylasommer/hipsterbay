@@ -61,4 +61,17 @@ describe('users', function(){
     });
   });
 
+  describe('post /auction/:auctionId/accept', function(){
+    it('should accept a swap with another user', function(done){
+      request(app)
+      .get('/auction/a10000000000000000000000/accept')
+      .set('cookie', cookie)
+      .send('00000000000000000000002a')
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        done();
+      });
+    });
+  });
+
 });
