@@ -27,7 +27,7 @@ exports.search = function(req, res){
       if(req.params.query){
         auctions = Auction.filterBySearchQuery(auctions, req.params.query);
       }
-      res.render('auctions/search', {tags:tags, auctions:auctions});
+      res.render('auctions/search', {tags:tags, auctions:auctions, user:res.locals.user});
     });
   });
 };
@@ -38,4 +38,8 @@ exports.acceptSwap = function(req, res){
   Auction.acceptSwap(req.body, function(){
     res.redirect('/');//change to congrats page later
   });
+};
+
+exports.congrats = function(req, res){
+  res.render('auctions/congrats');
 };
