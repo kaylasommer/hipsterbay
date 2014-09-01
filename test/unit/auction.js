@@ -96,4 +96,14 @@ describe('Auction', function(){
       });
     });
   });
+
+  describe('.bid', function(){
+    it('should place a bid on an item', function(done){
+      Auction.bid('00000000000000000000000c', 'a30000000000000000000000', function(item, auction){
+        expect(item).to.be.ok;
+        expect(auction).to.be.ok;
+        done();
+      });
+    });
+  });
 });

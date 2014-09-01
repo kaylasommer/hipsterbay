@@ -1,7 +1,8 @@
 'use strict';
 
 var Auction = require('../models/auction'),
-    Tag = require('../models/tag');
+        Tag = require('../models/tag'),
+       Item = require('../models/item');
 
 exports.new = function(req, res){
   Auction.create(req.body, function(){
@@ -14,7 +15,10 @@ exports.show = function(req, res){
     if(res.locals.user._id.toString() === auction.ownerId.toString()){
       res.render('auctions/seller-show', {auction:auction});
     }else{
-      res.render('auctions/bidder-show', {auction:auction});
+      Item.findAvailable(res.locals.user._id, function(err, items){
+        console.log(items);
+        res.render('auctions/bidder-show', {auction:auction, items: items});
+      });
     }
   });
 };
@@ -42,4 +46,10 @@ exports.acceptSwap = function(req, res){
 
 exports.congrats = function(req, res){
   res.render('auctions/congrats');
+};
+
+exports.bid = function(req, res){
+  Auction.bid(req.body.itemId, req.params.auctionId, function(){
+    res.redirect('/auction/' + req.params.auctionId);
+  });
 };

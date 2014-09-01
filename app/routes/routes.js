@@ -43,7 +43,7 @@ module.exports = function(app, express){
   app.get(['/auction/search', '/auction/search/:query'], auctions.search);
   app.get('/auction/:auctionId', auctions.show);
   app.post('/auction/:auctionId/accept', auctions.acceptSwap);
-  //app.post('/auction/:auctionId/bid', auctions.bid);
+  app.post('/auction/:auctionId/bid', auctions.bid);
   app.get('/message/:receiverId/send', messages.new);
   //app.post('/message/:receiverId', users.send);
   //app.post('/message/reply', users.reply);
