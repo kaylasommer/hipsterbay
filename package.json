@@ -52,7 +52,10 @@
     "morgan": "^1.2.3",
     "multiparty": "^3.3.2",
     "request": "^2.40.0",
-    "underscore-contrib": "^0.3.0"
+    "underscore-contrib": "^0.3.0",
+    "mailgun": "~0.4.2",
+    "twilio": "~1.7.0",
+    "mailgun-js": "~0.5.4"
   },
   "devDependencies": {
     "blanket": "^1.1.6",

@@ -3,7 +3,9 @@
 var Mongo = require('mongodb'),
     async = require('async'),
     _     = require('lodash'),
-    Item  = require('./item');
+    Item  = require('./item'),
+    User  = require('./user'),
+  Mailgun = require('mailgun-js');
 
 function Auction(o){
   this.name          = o.name;
@@ -76,11 +78,17 @@ Auction.acceptSwap = function(swap, cb){
     swap[key] = Mongo.ObjectID(swap[key]);
   });
 
-  //Update item ownership status for seller
+  //Update item ownership status for seller and send him/her a text and email
   Item.collection.findAndModify({_id: swap.auctionItem}, {}, {$set: {ownerId: swap.bidderId, isForOffer: false, isAvailable: true}}, function(err1, aucItem){
     Item.collection.findAndModify({_id: swap.bidderItem}, {}, {$set: {ownerId: swap.auctioneerId, isForBid: false, isAvailable: true}}, function(err2, bidderItem){
       Auction.collection.remove({_id: swap.auctionId}, function(){
-        cb(bidderItem, aucItem);
+        User.findById(bidderItem.ownerId, function(winner){
+          winnerTextMsg(winner.phone, aucItem, function(err, response){
+            winnerEmail(winner.email, aucItem, function(err, response){
+              cb(bidderItem, aucItem);
+            });
+          });
+        });
       });
     });
   });
@@ -100,9 +108,31 @@ function itemIterator(itemId, cb){
 
 function bidderIterator(bidder, cb){
   var itemOwners;
-  require('./user').findById(bidder.ownerId, function(owner){
+  User.findById(bidder.ownerId, function(owner){
     itemOwners = owner;
     cb(null, itemOwners);
   });
 }
 
+function winnerTextMsg(to, item, cb){
+  if(!to){return cb();}
+
+  var accountSid = process.env.TWSID,
+      authToken  = process.env.TWTOK,
+      from       = process.env.FROM,
+      client     = require('twilio')(accountSid, authToken),
+      body       = 'Your bid for: ' + item.name  + ' has been chosen!';
+
+  client.messages.create({to:to, from:from, body:body}, cb);
+}
+
+function winnerEmail(to, item, cb){
+  var apikey = process.env.GUNKEY,
+      domain = process.env.GUN_DOMAIN,
+     mailgun = new Mailgun({apiKey: apikey, domain: domain}),
+        body = 'Your bid for: ' + item.name  + ' has been chosen! Make needed arrangements for the trade.',
+        data = {from: 'admin-no-reply@hipsterbay.com', to: to, subject: 'Your bid has been chosen for ' + item.name, text: body};
+
+  mailgun.messages().send(data, cb);
+
+}
