@@ -87,5 +87,18 @@ describe('users', function(){
     });
   });
 
+  describe('post /auction/:auctionId/bid', function(){
+    it('should accept a bid from a given person', function(done){
+      request(app)
+      .post('/auction/a30000000000000000000000/bid')
+      .set('cookie', cookie)
+      .send('item=00000000000000000000000c')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
+
 });
 

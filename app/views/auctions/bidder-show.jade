@@ -21,6 +21,15 @@ block content
             h4 Owner: #{auction.itemOwners[index].alias}
             h3 Description
             .description= bid.description
+      if items.length
+        form(method='post' action='/auction/#{auction._id}/bid')
+          select(name='itemId')
+            each item in items
+              option(value='#{item._id}')= item.name
+          button.btn.btn-default(type='submit') Place Bid
+      else 
+        .row 
+          .col-xs-12: h2 You have nothing to bid. Click 'Manage Items' to add some!
 
 
     else
