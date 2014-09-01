@@ -34,6 +34,12 @@ exports.search = function(req, res){
 };
 
 exports.acceptSwap = function(req, res){
-  //I need the item for offer based on the item's owner
-  //I need the item accepted and owner id associated with this person
+  req.body.auctioneerId = res.locals.user._id;
+  req.body.auctionId = req.params.auctionId;
+  console.log('----REQ BODY----');
+  console.log(req.body);
+  console.log('----REQ BODY END ----');
+  Auction.acceptSwap(req.body, function(){
+    res.redirect('/');//change to congrats page later
+  });
 };

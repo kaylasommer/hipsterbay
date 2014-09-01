@@ -52,7 +52,6 @@ Auction.findAll = function(query, cb){
   });
 };
 
-//Dave Note: Decided to call this more closely related to what it will be doing
 Auction.displayAuction = function(id, cb){
   var auctionId = Mongo.ObjectID(id);
   Auction.collection.findOne({_id: auctionId}, function(err, auction){
@@ -70,6 +69,25 @@ Auction.displayAuction = function(id, cb){
   });
 };
 
+Auction.acceptSwap = function(swap, cb){
+  var keys = Object.keys(swap);
+
+  //Change objects to Mongo objects
+  keys.forEach(function(key){
+    swap[key] = Mongo.ObjectID(swap[key]);
+  });
+
+  //Update item ownership status for seller
+  Item.collection.update({_id: swap.auctionItem}, {$set: {ownerId: swap.bidderId, isForOffer: false, isAvailable: true}}, function(err, seller){
+    Item.collection.update({_id: swap.bidderItem}, {$set: {ownerId: swap.auctioneerId, isForBid: false, isAvailable: true}}, function(err, buyer){
+      Auction.collection.remove({_id: swap.auctionId}, function(){
+        cb(seller, buyer);
+      });
+    });
+  });
+
+};
+
 module.exports = Auction;
 
 //Private Functions
@@ -83,7 +101,7 @@ function itemIterator(itemId, cb){
 
 function bidderIterator(bidder, cb){
   var itemOwners;
-  require('./user').findById(bidder.ownerId, function(err, owner){
+  require('./user').findById(bidder.ownerId, function(owner){
     itemOwners = owner;
     cb(null, itemOwners);
   });

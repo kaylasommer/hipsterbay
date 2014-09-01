@@ -63,4 +63,13 @@ describe('Auction', function(){
       });
     });
   });
+
+  describe('.acceptSwap', function(){
+    it('should allow a auctioneer to accept a bid for their item', function(done){
+      var itemId = '';
+      var sellerId = Mongo.ObjectID('');
+      Auction.acceptSwap(itemId, sellerId, function(){
+      });
+    });
+  });
 });

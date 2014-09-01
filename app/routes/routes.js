@@ -41,7 +41,7 @@ module.exports = function(app, express){
   app.get(['/auction/search', '/auction/search/:query'], auctions.search);
   //app.get('/auction/search/:query', auctions.search);
   app.get('/auction/:auctionId', auctions.show);
-  //app.post('/auction/:auctionId/accept', auctions.acceptSwap);
+  app.post('/auction/:auctionId/accept', auctions.acceptSwap);
   //app.post('/auction/:auctionId/bid', auctions.bid);
   //app.post('/message/:ownerId', users.send);
   //app.post('/message/reply', users.reply);
