@@ -28,9 +28,20 @@ Item.findAvailable = function(id, cb){
   Item.collection.find({ownerId: ownerId, isAvailable: true}).toArray(cb);
 };
 
-Item.findById = function(id, cb){
-  var itemId = Mongo.ObjectID(id);
-  Item.collection.findOne({_id: itemId}, cb);
+Item.findById = function(itemId,  cb){
+  var id = Mongo.ObjectID(itemId);
+  Item.collection.findOne({_id: id}, cb);
+};
+
+Item.findByOwnerId = function(id, cb){
+  var ownerId = Mongo.ObjectID(id);
+  Item.collection.find({ownerId: ownerId}).toArray(cb);
+};
+
+Item.deleteById = function(itemId, cb){
+  var _id = Mongo.ObjectID(itemId);
+
+  Item.collection.findAndRemove({_id:_id}, cb);
 };
 
 

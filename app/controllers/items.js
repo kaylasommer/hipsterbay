@@ -1,8 +1,16 @@
 'use strict';
 
 var Item = require('../models/item'),
-    Auction = require('../models/auction');
+    Auction = require('../models/auction'),
+    Tag  = require('../models/tag');
 
+exports.show = function(req, res){
+  Tag.findAll(function(tags){
+    Item.findById(req.params.itemId, function(err, item){
+      res.render('items/edit', {item : item, tags:tags});
+    });
+  });
+};
 
 exports.index = function(req, res){
   //Find all available items from currently logged in user
@@ -15,6 +23,11 @@ exports.index = function(req, res){
   });
 };
 
+exports.delete = function(req, res){
+  Item.deleteById(req.params.itemId, function(){
+    res.redirect('/items/manage');
+  });
+};
 
 exports.addItem = function(req, res){
   Item.create(req.body, function(err, item){

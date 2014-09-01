@@ -28,6 +28,19 @@ describe('users', function(){
     });
   });
 
+  describe('get /items/show', function(){
+    it('should show a specific item  page', function(done){
+      request(app)
+      .get('/items/00000000000000000000000a/show')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('Candle');
+        done();
+      });
+    });
+  });
+
   describe('get /items/manage', function(){
     it('should show the item management page where users can create new items', function(done){
       request(app)
@@ -35,6 +48,18 @@ describe('users', function(){
       .set('cookie', cookie)
       .end(function(err, res){
         expect(res.status).to.equal(200);
+        done();
+      });
+    });
+  });
+
+  describe('delete /items/:itemId', function(done){
+    it('should delete an item', function(done){
+      request(app)
+      .delete('/items/00000000000000000000000a')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
         done();
       });
     });
@@ -55,5 +80,4 @@ describe('users', function(){
       });
     });
   });
-
 });

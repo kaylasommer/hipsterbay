@@ -5,7 +5,12 @@ var Mongo = require('mongodb'),
     _     = require('lodash'),
     Item  = require('./item');
 
-function Auction(){
+function Auction(o){
+  this.name          = o.name;
+  this.bids          = [];
+  this.offeredItemId = Mongo.ObjectID(o.offeredItemId);
+  this.ownerId       = Mongo.ObjectID(o.ownerId);
+  this.tag           = [];
 }
 
 Object.defineProperty(Auction, 'collection', {
@@ -15,6 +20,14 @@ Object.defineProperty(Auction, 'collection', {
 Auction.findByOwnerId = function(id, cb){
   var ownerId = Mongo.ObjectID(id);
   Auction.collection.find({ownerId: ownerId}).toArray(cb);
+};
+
+Auction.create = function(o, cb){
+  var auction = new Auction(o);
+console.log(auction, o.offeredItemId);
+  Item.collection.update({_id: auction.offeredItemId}, {$set: {isForOffer: true, isAvailable: false}}, function(){
+    Auction.collection.save(auction, cb);
+  });
 };
 
 Auction.filterBySearchQuery = function(auctions, query){
@@ -75,5 +88,4 @@ function bidderIterator(bidder, cb){
     cb(null, itemOwners);
   });
 }
-
 

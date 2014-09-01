@@ -28,6 +28,19 @@ describe('users', function(){
     });
   });
 
+  describe('post /items/auction', function(done){
+    it('should create a new auction', function(done){
+      request(app)
+      .post('/items/auction/')
+      .set('cookie', cookie)
+      .send('ownerId=000000000000000000000001&name=Tasty+Apple+Lip+Balm&tag=Other')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
+
   describe('get /auction/:auctionId', function(done){
     it('should take a logged in user to see their personal auctions', function(done){
       request(app)

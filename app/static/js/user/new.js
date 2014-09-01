@@ -18,7 +18,7 @@
       success: function(data){
         //Append the new item to the available items list
         var $availableItems = $('#availableItems'),
-        $newItem = $('<tr><td><a href="/item/' + data._id + '/show">' + data.name + '</a>');
+        $newItem = $('<tr><td><a href="/items/' + data._id + '/show">' + data.name + '</a>');
         $availableItems.append($newItem);
         $newItem.hide().fadeIn(1000);
       }

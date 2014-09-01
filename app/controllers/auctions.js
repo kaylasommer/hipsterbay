@@ -3,6 +3,12 @@
 var Auction = require('../models/auction'),
     Tag = require('../models/tag');
 
+exports.new = function(req, res){
+  Auction.create(req.body, function(){
+    res.redirect('/items/manage');
+  });
+};
+
 exports.show = function(req, res){
   Auction.displayAuction(req.params.auctionId, function(auction){
     console.log(auction);
@@ -25,4 +31,9 @@ exports.search = function(req, res){
       res.render('auctions/search', {tags:tags, auctions:auctions});
     });
   });
+};
+
+exports.acceptSwap = function(req, res){
+  //I need the item for offer based on the item's owner
+  //I need the item accepted and owner id associated with this person
 };
