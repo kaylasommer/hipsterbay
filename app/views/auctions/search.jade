@@ -7,7 +7,7 @@ block content
     .col-xs-3.sidebar
       ul.nav.side-bar#tag
         each tag in tags
-          li: a(href='?tag=#{tag}')= tag
+          li: a(href='/auction/search?tag=#{tag}')= tag
     .col-xs-9
         #map
         .row#userLocation(data-lat=user.loc.lat, data-lng=user.loc.lng)
