@@ -7,7 +7,7 @@ var morgan         = require('morgan'),
     session        = require('express-session'),
     RedisStore     = require('connect-redis')(session),
     security       = require('../lib/security'),
-    debug          = require('../lib/debug'),
+    //debug          = require('../lib/debug'),
     home           = require('../controllers/home'),
     users          = require('../controllers/users'),
     auctions       = require('../controllers/auctions'),
@@ -41,7 +41,7 @@ module.exports = function(app, express){
   app.get('/auction/congrats', auctions.congrats);
   app.get(['/auction/search', '/auction/search/:query'], auctions.search);
   app.get('/auction/:auctionId', auctions.show);
-  //app.post('/auction/:auctionId/accept', auctions.acceptSwap);
+  app.post('/auction/:auctionId/accept', auctions.acceptSwap);
   //app.post('/auction/:auctionId/bid', auctions.bid);
   //app.post('/message/:ownerId', users.send);
   //app.post('/message/reply', users.reply);

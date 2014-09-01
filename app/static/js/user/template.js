@@ -9,6 +9,6 @@
     e.preventDefault();
     var query = $('#search').val();
     window.location = '/auction/search/' + query;
-  };
+  }
 })();
 

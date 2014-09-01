@@ -85,3 +85,14 @@
     "isForBid" : true,
     "isAvailable" : false
 }
+
+{
+    "_id" : {"$oid" : "00000000000000000000002b"},
+    "name" : "Moldy Sock",
+    "ownerId" : {"$oid": "000000000000000000000002"},
+    "description" : "Always a hit at parties. Don't pass up on this one-of-a-kind-offer.",
+    "photo" : "http://www.nhm.ac.uk/natureplus/servlet/JiveServlet/showImage/38-1697-13270/AHT5919_1!_Side1_BT+resized.jpg",
+    "isForOffer" : false,
+    "isForBid" : true,
+    "isAvailable" : false
+}

@@ -32,6 +32,14 @@ exports.search = function(req, res){
   });
 };
 
+exports.acceptSwap = function(req, res){
+  req.body.auctioneerId = res.locals.user._id;
+  req.body.auctionId = req.params.auctionId;
+  Auction.acceptSwap(req.body, function(){
+    res.redirect('/');//change to congrats page later
+  });
+};
+
 exports.congrats = function(req, res){
   res.render('auctions/congrats');
 };
