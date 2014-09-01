@@ -132,6 +132,18 @@ describe('users', function(){
       });
     });
   });
+  describe('post /message/2', function(done){
+    it('should redirect to', function(done){
+      request(app)
+      .post('/message/000000000000000000000002')
+      .set('cookie', cookie)
+      .send('message=testMsg')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        done();
+      });
+    });
+  });
 
 });//end
 
