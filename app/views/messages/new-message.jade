@@ -1,0 +1,11 @@
+extends ../shared/template
+block content
+   .panel.panel-default
+      .panel-body
+          form(role='form', method='post', action='/message/#{receiver._id}')
+            .row
+              .col-xs-6
+                  label(for='message') Message
+                  textarea.form-control#message(name='message', autofocus=true)
+                .form-group
+                  button.btn.btn-info.btn-sm(type='submit') Send Message
