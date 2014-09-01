@@ -11,7 +11,6 @@ exports.new = function(req, res){
 
 exports.show = function(req, res){
   Auction.displayAuction(req.params.auctionId, function(auction){
-    console.log(auction);
     if(res.locals.user._id.toString() === auction.ownerId.toString()){
       res.render('auctions/seller-show', {auction:auction});
     }else{
@@ -36,9 +35,6 @@ exports.search = function(req, res){
 exports.acceptSwap = function(req, res){
   req.body.auctioneerId = res.locals.user._id;
   req.body.auctionId = req.params.auctionId;
-  console.log('----REQ BODY----');
-  console.log(req.body);
-  console.log('----REQ BODY END ----');
   Auction.acceptSwap(req.body, function(){
     res.redirect('/');//change to congrats page later
   });

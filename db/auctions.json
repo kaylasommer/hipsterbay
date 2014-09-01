@@ -20,7 +20,7 @@
     "_id" : {"$oid" : "a30000000000000000000000"},
     "ownerId" : {"$oid": "000000000000000000000001"},
     "offeredItemId" :  {"$oid": "00000000000000000000001a"},
-    "bids" : [], 
+    "bids" : ["00000000000000000000002b"], 
     "tag" : "Other",
     "name": "Ever needed a kidney but didn't know where to get it? Inquire here!"
 }

@@ -66,9 +66,18 @@ describe('Auction', function(){
 
   describe('.acceptSwap', function(){
     it('should allow a auctioneer to accept a bid for their item', function(done){
-      var itemId = '';
-      var sellerId = Mongo.ObjectID('');
-      Auction.acceptSwap(itemId, sellerId, function(){
+      var body = {
+        bidderId: '000000000000000000000001',
+        auctionItem: Mongo.ObjectID('00000000000000000000000e'),
+        bidderItem: Mongo.ObjectID('00000000000000000000002a'),
+        auctioneerId: '000000000000000000000002',
+        auctionId: 'a20000000000000000000000'
+      };
+
+      Auction.acceptSwap(body, function(bidderItem, aucItem){
+        expect(aucItem).to.be.ok;
+        expect(bidderItem).to.ok;
+        done();
       });
     });
   });

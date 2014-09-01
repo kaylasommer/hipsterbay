@@ -24,7 +24,6 @@ Auction.findByOwnerId = function(id, cb){
 
 Auction.create = function(o, cb){
   var auction = new Auction(o);
-console.log(auction, o.offeredItemId);
   Item.collection.update({_id: auction.offeredItemId}, {$set: {isForOffer: true, isAvailable: false}}, function(){
     Auction.collection.save(auction, cb);
   });
@@ -78,10 +77,10 @@ Auction.acceptSwap = function(swap, cb){
   });
 
   //Update item ownership status for seller
-  Item.collection.update({_id: swap.auctionItem}, {$set: {ownerId: swap.bidderId, isForOffer: false, isAvailable: true}}, function(err, seller){
-    Item.collection.update({_id: swap.bidderItem}, {$set: {ownerId: swap.auctioneerId, isForBid: false, isAvailable: true}}, function(err, buyer){
+  Item.collection.findAndModify({_id: swap.auctionItem}, {}, {$set: {ownerId: swap.bidderId, isForOffer: false, isAvailable: true}}, function(err1, aucItem){
+    Item.collection.findAndModify({_id: swap.bidderItem}, {}, {$set: {ownerId: swap.auctioneerId, isForBid: false, isAvailable: true}}, function(err2, bidderItem){
       Auction.collection.remove({_id: swap.auctionId}, function(){
-        cb(seller, buyer);
+        cb(bidderItem, aucItem);
       });
     });
   });

@@ -66,5 +66,24 @@ describe('Item', function(){
     });
   });
 
+  describe('.findById', function(){
+    it('should find a item  by its itemId', function(done){
+      var itemId = '00000000000000000000000a';
+      Item.findById(itemId, function(err, item){
+        expect(item.name).to.equal('Used Candle');
+        done();
+      });
+    });
+  });
+
+  describe('.findByOwnerId', function(){
+    it('should find all auctions for a specific user', function(done){
+      Item.findByOwnerId('000000000000000000000002', function(err, items){
+        expect(items).to.have.length(4);
+        done();
+      });
+    });
+  });
 
 });
+
