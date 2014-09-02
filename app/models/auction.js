@@ -9,7 +9,7 @@ var Mongo = require('mongodb'),
   Mailgun = require('mailgun-js');
 
 function Auction(o){
-  this.name          = o.name;
+  this.name          = o.name || 'Untitled Auction';
   this.bids          = [];
   this.offeredItemId = Mongo.ObjectID(o.offeredItemId);
   this.ownerId       = Mongo.ObjectID(o.ownerId);
