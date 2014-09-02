@@ -7,8 +7,8 @@
   "photo" : "http://votesmart.org/canphoto/2541_lg.jpg",
   "loc" : {
     "name" : "Nashville",
-    "lat"  : 36.1866405,
-    "lng"  : -86.7852455
+    "lat"  : "36.1866405",
+    "lng"  : "-86.7852455"
   }
 },
 {
@@ -20,8 +20,48 @@
   "photo" : "http://votesmart.org/canphoto/2541_lg.jp://pbs.twimg.com/profile_images/3485378075/96bb6b9c4cb37faf3e41b7e42f0a372b.jpeg",
   "loc" : {
     "name" : "Nashville",
-    "lat"  : 36.1866405,
-    "lng"  : -86.7852455
+    "lat"  : "36.1866405",
+    "lng"  : "-86.7852455"
   }
-}
+},
+{
+    "_id" : {"$oid":"000000000000000000000003"},
+    "alias" : "jill",
+    "email" : "jill@mailinator.com",
+    "password" : "$2a$10$7blW9OkECounLRWax3tob.x6F4FRN6PVLEIXCCiRX7ZlcfkjUPjGu",
+    "phone" : "+15005550006",
+    "photo" : "http://savagehenrymagazine.com/wp-content/uploads/2014/01/Grandma-Hipster-_tvhd-660x330.jpg",
+    "loc" : {
+        "name" : "Knoxville, TN, USA",
+        "lat" : "35.9606384",
+        "lng" : "-83.92073920000001"
+    }
+},
 
+{
+    "_id" : {"$oid":"000000000000000000000004"},
+    "alias" : "Polo",
+    "email" : "polor@mailinator.com",
+    "password" : "$2a$10$Q2LoUYxhphjw1cnm/wi1L.uLoEmQsbEzP9UWtzciASR6MBbnaxzQS",
+    "phone" : "+1500555006",
+    "photo" : "http://www.clker.com/cliparts/w/x/y/j/0/W/polar-bear-hi.png",
+    "loc" : {
+        "name" : "Huntsville, AL, USA",
+        "lat" : "34.7303688",
+        "lng" : "-86.58610369999997"
+    }
+},
+
+{
+    "_id" : {"$oid":"000000000000000000000005"},
+    "alias" : "joe",
+    "email" : "joe@mailinator.com",
+    "password" : "$2a$10$VgkUhoOesX0dGCXZ2YBfNucCm3h.tNiTmKe4SRUtueJKuYRoflKCK",
+    "phone" : "+15005550006",
+    "photo" : "http://38.media.tumblr.com/8d3b8f5d08ce332add55a60b9342a229/tumblr_n2cbgzUvwt1qmwrnuo1_1280.jpg",
+    "loc" : {
+        "name" : "New Orleans, LA, USA",
+        "lat" : "29.95106579999999",
+        "lng" : "-90.0715323"
+    }
+}
