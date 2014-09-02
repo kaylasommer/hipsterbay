@@ -9,7 +9,7 @@ function User(o){
   this.email    = o.email;
   this.password = bcrypt.hashSync(o.password, 10);
   this.phone    = o.phone;
-  this.photo    = o.photo;
+  this.photo    = o.photo || 'http://i.dailymail.co.uk/i/pix/2013/08/07/article-2385822-1B2EBBDA000005DC-922_634x685.jpg';
   this.loc      = {name: o.name, lat: parseFloat(o.lat), lng: parseFloat(o.lng)};
 }
 
@@ -51,7 +51,7 @@ User.prototype.unread = function(cb){
 };
 
 User.prototype.send = function(receiver, obj, cb){
-  require('./message').send(this._id, receiver, obj.message, cb);
+  require('./message').send(this._id, receiver._id, obj.message, cb);
 };
 
 module.exports = User;

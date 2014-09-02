@@ -16,7 +16,6 @@ exports.show = function(req, res){
       res.render('auctions/seller-show', {auction:auction});
     }else{
       Item.findAvailable(res.locals.user._id, function(err, items){
-        console.log(items);
         res.render('auctions/bidder-show', {auction:auction, items: items});
       });
     }
@@ -40,7 +39,7 @@ exports.acceptSwap = function(req, res){
   req.body.auctioneerId = res.locals.user._id;
   req.body.auctionId = req.params.auctionId;
   Auction.acceptSwap(req.body, function(){
-    res.redirect('/');//change to congrats page later
+    res.redirect('/auction/congrats');
   });
 };
 
