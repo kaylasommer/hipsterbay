@@ -1,26 +1,150 @@
+
 {
     "_id" : {"$oid" : "a10000000000000000000000"},
-    "ownerId" : {"$oid": "000000000000000000000002"},
-    "offeredItemId" :  {"$oid": "00000000000000000000000d"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
+    "offeredItemId" : {"$oid" : "00000000000000000000000d"},
     "bids" : [],
     "tag" : "Vehicles",
-    "name": "2005 Pontiac Sunfire - Like New!"
+    "name" : "2005 Pontiac Sunfire - Like New!"
 }
 
 {
     "_id" : {"$oid" : "a20000000000000000000000"},
-    "ownerId" : {"$oid": "000000000000000000000002"},
-    "offeredItemId" :  {"$oid": "00000000000000000000000e"},
-    "bids" : ["00000000000000000000000f", "00000000000000000000002a"], 
+    "ownerId" : {"$oid" : "000000000000000000000002"},
+    "offeredItemId" : {"$oid" : "00000000000000000000000e"},
+    "bids" : [ 
+        "00000000000000000000000f", 
+        "00000000000000000000002a"
+    ],
     "tag" : "Household Items",
-    "name": "Scream 3 Movie Prop! Details inside! HURRY!"
+    "name" : "Scream 3 Movie Prop! Details inside! HURRY!"
 }
 
 {
     "_id" : {"$oid" : "a30000000000000000000000"},
-    "ownerId" : {"$oid": "000000000000000000000001"},
-    "offeredItemId" :  {"$oid": "00000000000000000000001a"},
-    "bids" : ["00000000000000000000002b"], 
+    "ownerId" : {"$oid" : "000000000000000000000001"},
+    "offeredItemId" : {"$oid" : "00000000000000000000001a"},
+    "bids" : [ 
+        "00000000000000000000002b"
+    ],
     "tag" : "Other",
-    "name": "Ever needed a kidney but didn't know where to get it? Inquire here!"
+    "name" : "Ever needed a kidney but didn't know where to get it? Inquire here!"
 }
+
+{
+    "_id" : {"$oid" : "5405469bc4c2b963059e205d"},
+    "name" : "Flux Capacitor. Time-travel device. ",
+    "bids" : [ 
+        "540558869f00df1507e99d38"
+    ],
+    "offeredItemId" : {"$oid" : "5405465bc4c2b963059e205c"},
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "tag" : ["Electronics"]
+}
+
+{
+    "_id" : {"$oid" : "54054810c4c2b963059e2061"},
+    "name" : "Book of Secrets",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "540547dbc4c2b963059e2060"},
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "tag" : ["Books"]
+}
+
+{
+    "_id" : {"$oid" : "54054c4eb0a7eac905f6df41"},
+    "name" : "Forklift / Cheeto combo",
+    "bids" : [ 
+        "54055ec49f00df1507e99d40"
+    ],
+    "offeredItemId" : {"$oid" : "54054c34b0a7eac905f6df40"},
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "tag" : ["Food"]
+}
+
+{
+    "_id" : {"$oid" : "540551a3b0a7eac905f6df48"},
+    "name" : "Record Player",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "54055087b0a7eac905f6df46"},
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "tag" : ["Electronics"]
+}
+
+{
+    "_id" : {"$oid" : "540551cbb0a7eac905f6df49"},
+    "name" : "Fixed-Gear Bicycle",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "54054ec9b0a7eac905f6df44"},
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "tag" : ["Sporting Goods"]
+}
+
+{
+    "_id" : {"$oid" : "54055203b0a7eac905f6df4a"},
+    "name" : "Brass Knuckles",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "54054e2cb0a7eac905f6df43"},
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "tag" : ["Toys"]
+}
+
+{
+    "_id" : {"$oid" : "54055212b0a7eac905f6df4b"},
+    "name" : "Vintage BMW",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "54055182b0a7eac905f6df47"},
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "tag" : ["Vehicles"]
+}
+
+{
+    "_id" : {"$oid" : "54054768c4c2b963059e205f"},
+    "name" : "Fur Coat",
+    "bids" : [ 
+        "54054f9bb0a7eac905f6df45", 
+        "5405616a9f00df1507e99d43", 
+        "5405610e9f00df1507e99d42"
+    ],
+    "offeredItemId" : {"$oid" : "5405474dc4c2b963059e205e"},
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "tag" : ["Women\'s Clothing"]
+}
+
+{
+    "_id" : {"$oid" : "54055c7e9f00df1507e99d3b"},
+    "name" : "Artificial Beard",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "540557739f00df1507e99d37"},
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "tag" : ["Men\'s Clothing"]
+}
+
+{
+    "_id" : {"$oid" : "54055ca69f00df1507e99d3c"},
+    "name" : "How to Win Friends and Influence People",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "54055c5d9f00df1507e99d3a"},
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "tag" : ["Books"]
+}
+
+{
+    "_id" : {"$oid" : "54055ced9f00df1507e99d3d"},
+    "name" : "Slightly-Used Gum",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "540559319f00df1507e99d39"},
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "tag" : ["Food"]
+}
+
+{
+    "_id" : {"$oid" : "54055dd59f00df1507e99d3f"},
+    "name" : "Poncho",
+    "bids" : [],
+    "offeredItemId" : {"$oid" : "54055dc49f00df1507e99d3e"},
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "tag" : ["Women\'s Clothing"]
+}
+
+

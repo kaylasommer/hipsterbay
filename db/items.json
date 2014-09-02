@@ -1,7 +1,8 @@
+
 {
     "_id" : {"$oid" : "00000000000000000000000a"},
     "name" : "Used Candle",
-    "ownerId" : {"$oid": "000000000000000000000001"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "description" : "Wow, just a candle. Really? Seriously?",
     "photo" : "http://upload.wikimedia.org/wikipedia/commons/9/9f/Candle-calendar.jpg",
     "isForOffer" : false,
@@ -12,7 +13,7 @@
 {
     "_id" : {"$oid" : "00000000000000000000000b"},
     "name" : "Red Apple Lip Balm",
-    "ownerId" : {"$oid": "000000000000000000000001"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "description" : "The apple wasn't enough?",
     "photo" : "http://www.musingsofamuse.com/wp-content/uploads/2013/09/Bath-Body-Works-Liplicious-Apple-Lip-Balm.jpg",
     "isForOffer" : false,
@@ -23,7 +24,7 @@
 {
     "_id" : {"$oid" : "00000000000000000000000c"},
     "name" : "2003 Nissan Versa",
-    "ownerId" : {"$oid": "000000000000000000000002"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
     "description" : "Slightly used. 150k miles. Buy it now!",
     "photo" : "http://media.caranddriver.com/images/media/35636/2008-nissan-versa-sedan-photo-36879-s-1280x782.jpg",
     "isForOffer" : false,
@@ -34,7 +35,7 @@
 {
     "_id" : {"$oid" : "00000000000000000000000d"},
     "name" : "2005 Pontiac Sunfire",
-    "ownerId" : {"$oid": "000000000000000000000002"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
     "description" : "They didn't even make them in this year!",
     "photo" : "http://carspics-db.com/data_images/models/pontiac-sunfire/pontiac-sunfire-03.jpg",
     "isForOffer" : true,
@@ -45,7 +46,7 @@
 {
     "_id" : {"$oid" : "00000000000000000000000e"},
     "name" : "Bent, rusty knife",
-    "ownerId" : {"$oid": "000000000000000000000002"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
     "description" : "Knife was a prop on Scream 3.",
     "photo" : "http://www.knife-depot.com/blog/wp-content/uploads/2011/12/Rusty-knife1.jpg",
     "isForOffer" : true,
@@ -56,7 +57,7 @@
 {
     "_id" : {"$oid" : "00000000000000000000000f"},
     "name" : "A wooden stick.",
-    "ownerId" : {"$oid": "000000000000000000000001"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "description" : "So, just a wooden stick. Nothing more. Nothing less.",
     "photo" : "http://www.cagreen.ca/images/NTSTC10C_B.gif",
     "isForOffer" : false,
@@ -67,7 +68,7 @@
 {
     "_id" : {"$oid" : "00000000000000000000001a"},
     "name" : "Bob's Kidney",
-    "ownerId" : {"$oid": "000000000000000000000001"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "description" : "Need a kidney? Paying in cash? We can be friends! CALL ME ASAP!",
     "photo" : "http://antiekllc.com/wp-content/uploads/2014/05/single-kidney-bean.jpg",
     "isForOffer" : true,
@@ -78,7 +79,7 @@
 {
     "_id" : {"$oid" : "00000000000000000000002a"},
     "name" : "Old Tire",
-    "ownerId" : {"$oid": "000000000000000000000001"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "description" : "Perfectly good tire. Great for tire swings",
     "photo" : "http://automotivethinker.com/wp-content/uploads/2012/03/oldTire.jpg",
     "isForOffer" : false,
@@ -89,9 +90,229 @@
 {
     "_id" : {"$oid" : "00000000000000000000002b"},
     "name" : "Moldy Sock",
-    "ownerId" : {"$oid": "000000000000000000000002"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
     "description" : "Always a hit at parties. Don't pass up on this one-of-a-kind-offer.",
     "photo" : "http://www.nhm.ac.uk/natureplus/servlet/JiveServlet/showImage/38-1697-13270/AHT5919_1!_Side1_BT+resized.jpg",
+    "isForOffer" : false,
+    "isForBid" : true,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "5405465bc4c2b963059e205c"},
+    "name" : "Flux Capacitor",
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "description" : "Travel back in time and prevent bad code. Must install in car and accelerate to 88 mph. ",
+    "photo" : "http://www.uspmotorsports.com/images/P/Flux_Capacitor_Time_Machine.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "5405474dc4c2b963059e205e"},
+    "name" : "Fur coat",
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "description" : "This fur coat is very warm. It used to belong to a friend of mine. I no longer need it -- thanks to environmental changes...",
+    "photo" : "http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=36027045",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "540547dbc4c2b963059e2060"},
+    "name" : "Book of Secrets",
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "description" : "In this book you will read all about...  Shhh... ",
+    "photo" : "http://a.tgcdn.net/images/products/zoom/afb6_book_of_secrets.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "54054962c4c2b963059e2064"},
+    "name" : "Polex",
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "description" : "Polex watch. It's much better than a Rolex.. Trust me, or I will eat you!!",
+    "photo" : "http://i00.i.aliimg.com/img/pb/724/270/108/108270724_768.jpg",
+    "isForOffer" : false,
+    "isForBid" : false,
+    "isAvailable" : true
+}
+
+{
+    "_id" : {"$oid" : "54054acec4c2b963059e2065"},
+    "name" : "Polar-Bear bikini ",
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "description" : "Slightly used bikini. Fits most polar bears. Polar bear and man in plaid shirt are not included!!",
+    "photo" : "http://blog.locustfork.net/wp-content/uploads/2011/02/BikiniBear_DU1b.jpg",
+    "isForOffer" : false,
+    "isForBid" : false,
+    "isAvailable" : true
+}
+
+{
+    "_id" : {"$oid" : "54054c34b0a7eac905f6df40"},
+    "name" : "Forklift / Cheeto combo",
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "description" : "Giant cheeto or tiny forklift. I can't remember which it is.. Either way though, you're getting a great deal!!!",
+    "photo" : "http://acrossthemargin.com/wp-content/uploads/2013/04/Cheetos.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "54054e2cb0a7eac905f6df43"},
+    "name" : "Brass Knuckles",
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "description" : "A solid set of brass knuckles. A lot of wear-and-tear, but they still work great!!!",
+    "photo" : "http://tightrope.cc/catalog/images/BrassKnuckles.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "5405603c9f00df1507e99d41"},
+    "name" : "Salmon",
+    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "description" : "Salmon. It's a type of fish... Very tasty. ",
+    "photo" : "http://www.fishcreeksalmon.org/Atlantic-salmon-2.JPG",
+    "isForOffer" : false,
+    "isForBid" : false,
+    "isAvailable" : true
+}
+
+{
+    "_id" : {"$oid" : "54054ec9b0a7eac905f6df44"},
+    "name" : "Fixed-Gear Bicycle",
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "description" : "A fixed-gear (fixie} bike. It's vintage and has great character. Needs new tires, chain, and brakes. ",
+    "photo" : "http://www.downloadjpeg.com/wp-content/uploads/2014/07/download-fixie-bicycles-q.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "54054f9bb0a7eac905f6df45"},
+    "name" : "Mr T. Poster",
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "description" : "A great Mr. T Poster. This guy'll kill you to Death!! Really, he will.. ",
+    "photo" : "http://finickypenguin.files.wordpress.com/2008/05/clubber.jpg",
+    "isForOffer" : false,
+    "isForBid" : true,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "54055087b0a7eac905f6df46"},
+    "name" : "Record Player",
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "description" : "It's old, but it has great sound quality. Vinyl is coming back!",
+    "photo" : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR2EFw8oeXUDKG04lKu_OKnJiTTKFmj0h7XFlRy181QTe_8F6Njxg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "54055182b0a7eac905f6df47"},
+    "name" : "Vintage BMW",
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "description" : "Super-hip BMW. Not sure about what year it is, but it's obviously old..  only 600k miles on it.",
+    "photo" : "http://qph.is.quoracdn.net/main-qimg-d1092416867d7e9b799a3a8cec80d7be?convert_to_webp=true",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "540557739f00df1507e99d37"},
+    "name" : "Artificial Beard",
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "description" : "Fake beard. Looks kind of real though. If you aren't hip enough to grow one, shoot me an offer.. Now!!",
+    "photo" : "http://www.mallatts.com/store/images/P/2024-BLK.jpeg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "540558869f00df1507e99d38"},
+    "name" : "PBR",
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "description" : "4 PBR tallboys. Not refrigerated, but, still, it's beer.. Shoot me an offer, so you can get to drinking..  ",
+    "photo" : "http://onmilwaukee.com/images/articles/dr/drinkadaypbr/drinkadaypbr_story1.jpg",
+    "isForOffer" : false,
+    "isForBid" : true,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "540559319f00df1507e99d39"},
+    "name" : "Slightly-Used Gum",
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "description" : "It's used, but it still has some flavor. I think it was cinnamon..  Or, was it mint..? I can't remember, but you can solve the mystery!",
+    "photo" : "http://robertsaric.com/wp-content/uploads/2012/09/makeamealoutofbubblegum.png",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "54055c5d9f00df1507e99d3a"},
+    "name" : "How to Win Friends and Influence People",
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "description" : "Self help book. I've learned a lot from it. Buy it NOW!!! or else.. ",
+    "photo" : "http://3219a2.medialib.glogster.com/media/19/19b32413b1310cc50ea093f0bfcc9f59b3a7dfb72bc87d764341e79156dea501/2562-1.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "54055dc49f00df1507e99d3e"},
+    "name" : "Poncho",
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "description" : "A poncho. Keeps you warm on a cold day..  Very festive. ",
+    "photo" : "http://styletips101.com/wp-content/uploads/2007/09/poncho-bio-bio-beige.jpg",
+    "isForOffer" : true,
+    "isForBid" : false,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "54055ec49f00df1507e99d40"},
+    "name" : "Sweater",
+    "ownerId" : {"$oid" : "000000000000000000000005"},
+    "description" : "People tell me this sweater is ugly.. It's not.. I promise. ",
+    "photo" : "http://www.syracusenewtimes.com/wp-content/uploads/2013/12/A-Florida-Christmas.jpg",
+    "isForOffer" : false,
+    "isForBid" : true,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "5405610e9f00df1507e99d42"},
+    "name" : "Bazooka",
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "description" : "You pull trigger. Things go \"BOOM\". ",
+    "photo" : "http://www.moretoyguns.com/toygun/80239.jpg",
+    "isForOffer" : false,
+    "isForBid" : true,
+    "isAvailable" : false
+}
+
+{
+    "_id" : {"$oid" : "5405616a9f00df1507e99d43"},
+    "name" : "Rusted VW Bug",
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "description" : "It's rusty, and it doesn't run.. Not sure who would want to drive one of these anyway.. Maybe Bob Barker.. ",
+    "photo" : "http://img88.imageshack.us/img88/7105/p3091428.jpg",
     "isForOffer" : false,
     "isForBid" : true,
     "isAvailable" : false
