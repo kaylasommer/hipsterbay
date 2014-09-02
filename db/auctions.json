@@ -39,7 +39,7 @@
     ],
     "offeredItemId" : {"$oid" : "5405465bc4c2b963059e205c"},
     "ownerId" : {"$oid" : "000000000000000000000004"},
-    "tag" : []
+    "tag" : ["Electronics"]
 }
 
 {
@@ -48,7 +48,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "540547dbc4c2b963059e2060"},
     "ownerId" : {"$oid" : "000000000000000000000004"},
-    "tag" : []
+    "tag" : ["Books"]
 }
 
 {
@@ -59,7 +59,7 @@
     ],
     "offeredItemId" : {"$oid" : "54054c34b0a7eac905f6df40"},
     "ownerId" : {"$oid" : "000000000000000000000004"},
-    "tag" : []
+    "tag" : ["Food"]
 }
 
 {
@@ -68,7 +68,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "54055087b0a7eac905f6df46"},
     "ownerId" : {"$oid" : "000000000000000000000003"},
-    "tag" : []
+    "tag" : ["Electronics"]
 }
 
 {
@@ -77,7 +77,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "54054ec9b0a7eac905f6df44"},
     "ownerId" : {"$oid" : "000000000000000000000003"},
-    "tag" : []
+    "tag" : ["Sporting Goods"]
 }
 
 {
@@ -86,7 +86,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "54054e2cb0a7eac905f6df43"},
     "ownerId" : {"$oid" : "000000000000000000000003"},
-    "tag" : []
+    "tag" : ["Toys"]
 }
 
 {
@@ -95,7 +95,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "54055182b0a7eac905f6df47"},
     "ownerId" : {"$oid" : "000000000000000000000003"},
-    "tag" : []
+    "tag" : ["Vehicles"]
 }
 
 {
@@ -108,7 +108,7 @@
     ],
     "offeredItemId" : {"$oid" : "5405474dc4c2b963059e205e"},
     "ownerId" : {"$oid" : "000000000000000000000004"},
-    "tag" : []
+    "tag" : ["Women\'s Clothing"]
 }
 
 {
@@ -117,7 +117,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "540557739f00df1507e99d37"},
     "ownerId" : {"$oid" : "000000000000000000000005"},
-    "tag" : []
+    "tag" : ["Men\'s Clothing"]
 }
 
 {
@@ -126,7 +126,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "54055c5d9f00df1507e99d3a"},
     "ownerId" : {"$oid" : "000000000000000000000005"},
-    "tag" : []
+    "tag" : ["Books"]
 }
 
 {
@@ -135,7 +135,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "540559319f00df1507e99d39"},
     "ownerId" : {"$oid" : "000000000000000000000005"},
-    "tag" : []
+    "tag" : ["Food"]
 }
 
 {
@@ -144,7 +144,7 @@
     "bids" : [],
     "offeredItemId" : {"$oid" : "54055dc49f00df1507e99d3e"},
     "ownerId" : {"$oid" : "000000000000000000000005"},
-    "tag" : []
+    "tag" : ["Women\'s Clothing"]
 }
 
 
