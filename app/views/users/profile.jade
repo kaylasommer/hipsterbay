@@ -3,11 +3,11 @@ block content
   .row
     .col-xs-6
       a.thumbnail(href='#')
-        img(src=user.photo)
+        img(src=client.photo)
       .col-xs-2
       .col-xs-6
-        h2= user.alias
-        h5= user.email
+        h2= client.alias
+        h5= client.email
         a(href='/items/manage') Manage Items
       .col-xs-2
     .col-xs-6
@@ -18,25 +18,25 @@ block content
             th Location
         body
           tr
-            td= user.phone
-            td= user.loc.name
+            td= client.phone
+            td= client.loc.name
       form#edit-profile(role='form', method='post', action='/user/profile')
         input(type='hidden', name='_method', value='put')
         .form-group
           label(for='email') Email
-          input.form-control#email(type='email', name='email', value=user.email, autofocus=true)
+          input.form-control#email(type='email', name='email', value=client.email, autofocus=true)
         .form-group
           label(for='alias') Alias
-          input.form-control#alias(type='text', name='alias', value=user.alias)
+          input.form-control#alias(type='text', name='alias', value=client.alias)
         .form-group
           label(for='phone') Phone
-          input.form-control#phone(type='tel', name='phone', value=user.phone)
+          input.form-control#phone(type='tel', name='phone', value=client.phone)
         .form-group
           label(for='photo') Photo
-          input.form-control#photo(type='text', name='photo', value=user.photo)
+          input.form-control#photo(type='text', name='photo', value=client.photo)
         .form-group
           label(for='loc[name]') Location
-          input.form-control#loc(type='text', name='loc[name]', value=user.loc.name)
+          input.form-control#loc(type='text', name='loc[name]', value=client.loc.name)
           input#lat(type='hidden', name='loc[lat]')
           input#lng(type='hidden', name='loc[lng]')
         button#edit-profile-submit.btn.btn-primary(type='submit') Submit
