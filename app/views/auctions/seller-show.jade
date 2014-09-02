@@ -1,16 +1,20 @@
 extends ../shared/template
 block content
-    h2 Your offer: #{auction.name}
+    h2.center <strong>Your auction:</strong> #{auction.name}
     .row
-      .col-xs-6
-        img.img-rounded(src="#{auction.itemForOffer.photo}")
-      .col-xs-6
-        .row 
-          .col-xs-12: h4 Description
+      .col-xs-3
+      .col-xs-3
+        img.img-border.img-responsive.img-circle(src="#{auction.itemForOffer.photo}")
+      .col-xs-3
         .row
-          .col-xs-12 #{auction.itemForOffer.description}
-    br
+          .col-xs-12: h3 Item Description:
+        .row
+          .col-xs-12.item-description #{auction.itemForOffer.description}
+      .col-xs-3
+
     if auction.bids.length
+      h3.center Bids For Your Item
+      hr
       each bid, index in auction.itemsForBid
        form(method='post' id='acceptBid' action='/auction/#{auction._id}/accept')
         .panel.panel-primary.bid
