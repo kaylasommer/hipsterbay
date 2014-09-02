@@ -11,6 +11,7 @@ var morgan         = require('morgan'),
     home           = require('../controllers/home'),
     users          = require('../controllers/users'),
     auctions       = require('../controllers/auctions'),
+    messages       = require('../controllers/messages'),
     items          = require('../controllers/items');
 
 module.exports = function(app, express){
@@ -42,9 +43,11 @@ module.exports = function(app, express){
   app.get(['/auction/search', '/auction/search/:query'], auctions.search);
   app.get('/auction/:auctionId', auctions.show);
   app.post('/auction/:auctionId/accept', auctions.acceptSwap);
-  //app.post('/auction/:auctionId/bid', auctions.bid);
-  //app.post('/message/:ownerId', users.send);
-  //app.post('/message/reply', users.reply);
+  app.get('/message/inbox', users.inbox);
+  app.post('/message/:messageId/toggleRead', users.toggleRead);
+  app.post('/auction/:auctionId/bid', auctions.bid);
+  app.get('/message/:receiverId/send', messages.new);
+  app.post('/message/:receiverId', messages.send);
 
   console.log('Express: Routes Loaded');
 };

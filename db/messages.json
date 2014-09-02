@@ -1,0 +1,32 @@
+{
+  "_id" : {"$oid":"aa0000000000000000000001"},
+  "senderId" : {"$oid":"000000000000000000000001"},
+  "receiverId" : {"$oid":"000000000000000000000002"},
+  "message" : "I like your stuff, would you like to trade?",
+  "isRead"  : false,
+  "Date":{"$date":1409097600000}
+  }
+{
+  "_id" : {"$oid":"aa0000000000000000000002"},
+  "senderId" : {"$oid":"000000000000000000000002"},
+  "receiverId" : {"$oid":"000000000000000000000001"},
+  "message" : "I am not sure, let me think about it.",
+  "isRead"  : false,
+  "Date":{"$date":1409184000000}
+  }
+{
+  "_id" : {"$oid":"aa0000000000000000000003"},
+  "senderId" : {"$oid":"000000000000000000000001"},
+  "receiverId" : {"$oid":"000000000000000000000002"},
+  "message" : "Lady think fast I havent got all month!!",
+  "isRead"  : false,
+  "Date":{"$date":1409270400000}
+  }
+{
+  "_id" : {"$oid":"aa0000000000000000000004"},
+  "senderId" : {"$oid":"000000000000000000000002"},
+  "receiverId" : {"$oid":"000000000000000000000001"},
+  "message" : "You are rude and I have not got all day so ya lets trade.",
+  "isRead"  : false,
+  "Date":{"$date":1409356800000}
+}

@@ -106,6 +106,17 @@ Auction.acceptSwap = function(swap, cb){
 
 };
 
+Auction.bid = function(item, auction, cb){
+  item = Mongo.ObjectID(item);
+  auction = Mongo.ObjectID(auction);
+  var bid = item.toString();
+  Item.collection.update({_id: item}, {$set: {isAvailable: false, isForBid: true}}, function(err1, item){
+    Auction.collection.update({_id: auction}, {$push: {bids: bid}}, function(err2, auction){
+      cb(item, auction);
+    });
+  });
+};
+
 module.exports = Auction;
 
 //Private Functions
