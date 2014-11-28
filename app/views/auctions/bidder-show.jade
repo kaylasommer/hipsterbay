@@ -1,6 +1,7 @@
 extends ../shared/template
 block content
-    h2.center <strong>Auction For</strong>: #{auction.itemForOffer.name}
+    h2.page-header: strong Auction For: 
+      span #{auction.itemForOffer.name}
     .row
       .col-xs-3
       .col-xs-3

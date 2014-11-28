@@ -25,14 +25,17 @@ module.exports = function(app, express){
   app.use(security.authenticate);
 
   app.get('/', home.index);
+
+
+  app.get('/register', users.register);
   app.post('/register', users.create);
   app.get('/login', users.login);
-  app.get('/register', users.register);
   app.post('/login', users.authenticate);
 
 
 
   app.use(security.bounce);
+
   app.delete('/logout', users.logout);
   app.get('/user/profile', users.profile);
   app.get('/items/:itemId/show', items.show);
