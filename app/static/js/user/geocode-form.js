@@ -9,16 +9,15 @@
 
   function getLocation(e){
     e.preventDefault();
-
-    var loc = $('#loc').val();
-    geocode(loc, function(name, lat, lng){
-      $('#loc').val(name);
-      $('#lat').val(lat);
-      $('#lng').val(lng);
-      $('#edit-profile').submit();
-      console.log(name, lat, lng);
-    });
+    if ($('#edit-profile').valid()) {
+      var loc = $('#loc').val();
+      geocode(loc, function(name, lat, lng){
+        $('#loc').val(name);
+        $('#lat').val(lat);
+        $('#lng').val(lng);
+        $('#edit-profile').submit();
+        console.log(name, lat, lng);
+      });
+    }
   }
 })();
-
-

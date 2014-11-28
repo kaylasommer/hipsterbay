@@ -27,7 +27,7 @@ block content
           input.form-control#photo(type='text', name='photo', value=client.photo || '')
         .form-group
           label(for='loc[name]') Location
-          input.form-control#loc(type='text', name='loc[name]')
+          input.form-control#loc(type='text', name='loc[name]', placeholder='Enter a City', value=(client.loc ? client.loc.name : 'Enter a city'), required)
           input#lat(type='hidden', name='loc[lat]')
           input#lng(type='hidden', name='loc[lng]')
         button#edit-profile-submit.btn.btn-primary(type='submit') Submit
