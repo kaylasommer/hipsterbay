@@ -6,7 +6,7 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/auction/search') Hipsterbay
+      a.navbar-brand(href='/') Hipsterbay
 
     .collapse.navbar-collapse#bs-navbar-collapse
       ul.nav.navbar-nav.navbar-right
@@ -24,6 +24,6 @@
                 input(type='hidden', name='_method', value='delete')
                 button.btn.btn-danger(type='submit')= user.email
         else
-          li: a(href='/login') Register
+          
+          li: a(href='/register') Register
           li: a(href='/login') Login
-
