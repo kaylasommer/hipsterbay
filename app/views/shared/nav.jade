@@ -15,8 +15,9 @@
             span.badge= user.unread
           li: a(href='/user/profile') Edit Profile
           li: a(href='/items/manage') Manage Items
+          
           form#search-form.navbar-form.navbar-left(role='search')
-              input.form-control#search(type='text' placeholder='Search')
+              input.form-control#search(type='text' placeholder='Search', required)
               button.btn.btn-default#search-button(type='submit') Go!
           li
             form.navbar-form(method='post', action='/logout')
