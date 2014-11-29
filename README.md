@@ -1,5 +1,5 @@
 ## Hipsterbay
-### Code Badges
+
 [![Build Status](https://travis-ci.org/kaylalynjones/hipsterbay.svg)](https://travis-ci.org/kaylalynjones/hipsterbay)
 [![Coverage Status](https://coveralls.io/repos/kaylalynjones/hipsterbay/badge.png)](https://coveralls.io/r/kaylalynjones/hipsterbay)
 
@@ -12,11 +12,11 @@
 
 
 ### Description
-#### A modern bartering application built on NodeJS. Users can register accounts and search for auctions that are nearby or far away. Tired of that nasty rug from the 80s? Trade it in for a new used tire.Can't stand your roommates cat? Trade it for a ferret named Cthulhu. Is that old worn-out shoe losing it's new-factor? Plenty of new old-worn out shoes to trade! This is Hipsterbay.
+A modern bartering application built on NodeJS. Users can register accounts and search for auctions that are nearby or far away. Tired of that nasty rug from the 80s? Trade it in for a new used tire.Can't stand your roommates cat? Trade it for a ferret named Cthulhu. Is that old worn-out shoe losing it's new-factor? Plenty of new old-worn out shoes to trade! This is Hipsterbay.
 
 # Models
 
-##User
+## User
 - prop-alias
 - prop-email
 - prop-password
@@ -30,8 +30,7 @@
 - .unread
 - .send
 
-```
-##Item
+## Item
 - prop-name
 - prop-ownderId
 - prop-description
@@ -45,9 +44,7 @@
 - .findByOwnerId
 - .deleteById
 
-
-```
-##Message
+## Message
 - prop-senderId
 - prop-receiverId
 - prop-message
@@ -59,12 +56,10 @@
 - .send
 - fn-iterator
 
-```
-##Tag
+## Tag
 - .findAll
 
-```
-##Auction
+## Auction
 - prop-name
 - prop-bids
 - prop-offeredItemId
@@ -114,8 +109,10 @@ $ npm install
 $ npm test
 ```
 ### Spin it up
+```bash
 $ grunt
 $ PORT=3000 DB=hipsterbay nodemon app/index.js
+```
 
 ### Contributors
 - Shruti Sharma
