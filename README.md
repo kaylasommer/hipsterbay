@@ -6,6 +6,9 @@
 ### Screenshots
 ![Image1](https://raw.githubusercontent.com/kaylalynjones/hipsterbay/master/docs/screenshots/home_hip.jpg)
 ![Image2](https://raw.githubusercontent.com/kaylalynjones/hipsterbay/master/docs/screenshots/manage_hip.jpg)
+![Image3](https://raw.githubusercontent.com/kaylalynjones/hipsterbay/master/docs/screenshots/search_hip.jpg)
+![Image4](https://raw.githubusercontent.com/kaylalynjones/hipsterbay/master/docs/screenshots/bid_hip.jpg)
+![Image5](https://raw.githubusercontent.com/kaylalynjones/hipsterbay/master/docs/screenshots/congrats_hip.jpg)
 
 
 ### Description
