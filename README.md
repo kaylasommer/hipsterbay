@@ -12,15 +12,11 @@
 
 
 ### Description
-### A modern bartering application built on NodeJS. Users can register accounts and search for auctions that are nearby or far away. Tired of that nasty rug from the 80s? Trade it in for a new used tire.Can't stand your roommates cat? Trade it for a ferret named Cthulhu. Is that old worn-out shoe losing it's new-factor? Plenty of new old-worn out shoes to trade! This is Hipsterbay.
+#### A modern bartering application built on NodeJS. Users can register accounts and search for auctions that are nearby or far away. Tired of that nasty rug from the 80s? Trade it in for a new used tire.Can't stand your roommates cat? Trade it for a ferret named Cthulhu. Is that old worn-out shoe losing it's new-factor? Plenty of new old-worn out shoes to trade! This is Hipsterbay.
 
-## Polar bears hate us.
+# Models
 
-## Hipsters love us.
-
-## Models
-
-#User
+##User
 - prop-alias
 - prop-email
 - prop-password
@@ -35,7 +31,7 @@
 - .send
 
 ```
-#Item
+##Item
 - prop-name
 - prop-ownderId
 - prop-description
@@ -51,7 +47,7 @@
 
 
 ```
-#Message
+##Message
 - prop-senderId
 - prop-receiverId
 - prop-message
@@ -64,11 +60,11 @@
 - fn-iterator
 
 ```
-#Tag
+##Tag
 - .findAll
 
 ```
-#Auction
+##Auction
 - prop-name
 - prop-bids
 - prop-offeredItemId
@@ -117,6 +113,9 @@ users
 $ npm install
 $ npm test
 ```
+### Spin it up
+$ grunt
+$ PORT=3000 DB=hipsterbay nodemon app/index.js
 
 ### Contributors
 - Shruti Sharma
