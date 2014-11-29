@@ -12,8 +12,8 @@
     "_id" : {"$oid" : "a20000000000000000000000"},
     "ownerId" : {"$oid" : "000000000000000000000002"},
     "offeredItemId" : {"$oid" : "00000000000000000000000e"},
-    "bids" : [ 
-        "00000000000000000000000f", 
+    "bids" : [
+        "00000000000000000000000f",
         "00000000000000000000002a"
     ],
     "tag" : "Household Items",
@@ -24,17 +24,17 @@
     "_id" : {"$oid" : "a30000000000000000000000"},
     "ownerId" : {"$oid" : "000000000000000000000001"},
     "offeredItemId" : {"$oid" : "00000000000000000000001a"},
-    "bids" : [ 
+    "bids" : [
         "00000000000000000000002b"
     ],
-    "tag" : "Other",
-    "name" : "Ever needed a kidney but didn't know where to get it? Inquire here!"
+    "tag" : "Electronics",
+    "name" : "Beautiful Camera! It is really a great deal!"
 }
 
 {
     "_id" : {"$oid" : "5405469bc4c2b963059e205d"},
     "name" : "Flux Capacitor. Time-travel device. ",
-    "bids" : [ 
+    "bids" : [
         "540558869f00df1507e99d38"
     ],
     "offeredItemId" : {"$oid" : "5405465bc4c2b963059e205c"},
@@ -54,7 +54,7 @@
 {
     "_id" : {"$oid" : "54054c4eb0a7eac905f6df41"},
     "name" : "Forklift / Cheeto combo",
-    "bids" : [ 
+    "bids" : [
         "54055ec49f00df1507e99d40"
     ],
     "offeredItemId" : {"$oid" : "54054c34b0a7eac905f6df40"},
@@ -67,7 +67,7 @@
     "name" : "Record Player",
     "bids" : [],
     "offeredItemId" : {"$oid" : "54055087b0a7eac905f6df46"},
-    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
     "tag" : ["Electronics"]
 }
 
@@ -76,7 +76,7 @@
     "name" : "Fixed-Gear Bicycle",
     "bids" : [],
     "offeredItemId" : {"$oid" : "54054ec9b0a7eac905f6df44"},
-    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "tag" : ["Sporting Goods"]
 }
 
@@ -85,7 +85,7 @@
     "name" : "Brass Knuckles",
     "bids" : [],
     "offeredItemId" : {"$oid" : "54054e2cb0a7eac905f6df43"},
-    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "tag" : ["Toys"]
 }
 
@@ -101,13 +101,13 @@
 {
     "_id" : {"$oid" : "54054768c4c2b963059e205f"},
     "name" : "Fur Coat",
-    "bids" : [ 
-        "54054f9bb0a7eac905f6df45", 
-        "5405616a9f00df1507e99d43", 
+    "bids" : [
+        "54054f9bb0a7eac905f6df45",
+        "5405616a9f00df1507e99d43",
         "5405610e9f00df1507e99d42"
     ],
     "offeredItemId" : {"$oid" : "5405474dc4c2b963059e205e"},
-    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
     "tag" : ["Women\'s Clothing"]
 }
 
@@ -146,5 +146,3 @@
     "ownerId" : {"$oid" : "000000000000000000000005"},
     "tag" : ["Women\'s Clothing"]
 }
-
-

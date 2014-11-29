@@ -186,7 +186,8 @@ form#edit-profile {
 }
 
 .thumbnail-bid {
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 300px;
   border-radius: 10px;
   border: 1px solid grey;
@@ -311,11 +312,22 @@ h3.auctions-title {
 //--------------------
 
 #lrg-img {
-  background-image: url('/img/congratulations.png');
+  background-image: url('/img/sidewalk_sale.jpg');
   background-size: contain;
   width: 100%;
   height: 1000px;
   background-repeat: no-repeat;
+  background-color: #2C3E50;
+
+  .congrats {
+    padding: 40px;
+    background-color: #fcfbf6;
+
+    h2 {
+      font-size: 4em;
+      color: black;
+    }
+  }
 }
 
 //--------------------

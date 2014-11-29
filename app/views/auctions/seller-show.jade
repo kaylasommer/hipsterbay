@@ -26,7 +26,7 @@ block content
           .panel-heading
             h3 Bid ##{index + 1} #{bid.name}
           .panel-body.bidBody
-            .thumbnail-sml(style="background-image: url(#{bid.photo});")
+            .thumbnail-bid(style="background-image: url(#{bid.photo});")
             h4 Owner: #{auction.itemOwners[index].alias}
             h3 Description
             .description= bid.description

@@ -2,8 +2,8 @@
 {
     "_id" : {"$oid" : "00000000000000000000000a"},
     "name" : "Used Candle",
-    "ownerId" : {"$oid" : "000000000000000000000001"},
-    "description" : "Wow, just a candle. Really? Seriously?",
+    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "description" : "I only burnt it down about half-way. Served me well.",
     "photo" : "http://upload.wikimedia.org/wikipedia/commons/9/9f/Candle-calendar.jpg",
     "isForOffer" : false,
     "isForBid" : false,
@@ -13,7 +13,7 @@
 {
     "_id" : {"$oid" : "00000000000000000000000b"},
     "name" : "Red Apple Lip Balm",
-    "ownerId" : {"$oid" : "000000000000000000000001"},
+    "ownerId" : {"$oid" : "000000000000000000000003"},
     "description" : "The apple wasn't enough?",
     "photo" : "http://www.musingsofamuse.com/wp-content/uploads/2013/09/Bath-Body-Works-Liplicious-Apple-Lip-Balm.jpg",
     "isForOffer" : false,
@@ -67,10 +67,10 @@
 
 {
     "_id" : {"$oid" : "00000000000000000000001a"},
-    "name" : "Bob's Kidney",
+    "name" : "Old Camera",
     "ownerId" : {"$oid" : "000000000000000000000001"},
-    "description" : "Need a kidney? Paying in cash? We can be friends! CALL ME ASAP!",
-    "photo" : "http://antiekllc.com/wp-content/uploads/2014/05/single-kidney-bean.jpg",
+    "description" : "I love this camera, especially because it's the one that got me started on simple old cameras.",
+    "photo" : "http://keaggy.com/cameras/cams-big/anscoShurFlash120-01.jpg",
     "isForOffer" : true,
     "isForBid" : false,
     "isAvailable" : false
@@ -112,7 +112,7 @@
 {
     "_id" : {"$oid" : "5405474dc4c2b963059e205e"},
     "name" : "Fur coat",
-    "ownerId" : {"$oid" : "000000000000000000000004"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
     "description" : "This fur coat is very warm. It used to belong to a friend of mine. I no longer need it -- thanks to environmental changes...",
     "photo" : "http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=36027045",
     "isForOffer" : true,
@@ -167,7 +167,7 @@
 {
     "_id" : {"$oid" : "54054e2cb0a7eac905f6df43"},
     "name" : "Brass Knuckles",
-    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "description" : "A solid set of brass knuckles. A lot of wear-and-tear, but they still work great!!!",
     "photo" : "http://tightrope.cc/catalog/images/BrassKnuckles.jpg",
     "isForOffer" : true,
@@ -189,7 +189,7 @@
 {
     "_id" : {"$oid" : "54054ec9b0a7eac905f6df44"},
     "name" : "Fixed-Gear Bicycle",
-    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "ownerId" : {"$oid" : "000000000000000000000001"},
     "description" : "A fixed-gear (fixie} bike. It's vintage and has great character. Needs new tires, chain, and brakes. ",
     "photo" : "http://www.downloadjpeg.com/wp-content/uploads/2014/07/download-fixie-bicycles-q.jpg",
     "isForOffer" : true,
@@ -211,7 +211,7 @@
 {
     "_id" : {"$oid" : "54055087b0a7eac905f6df46"},
     "name" : "Record Player",
-    "ownerId" : {"$oid" : "000000000000000000000003"},
+    "ownerId" : {"$oid" : "000000000000000000000002"},
     "description" : "It's old, but it has great sound quality. Vinyl is coming back!",
     "photo" : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR2EFw8oeXUDKG04lKu_OKnJiTTKFmj0h7XFlRy181QTe_8F6Njxg",
     "isForOffer" : true,
