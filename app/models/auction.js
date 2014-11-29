@@ -55,6 +55,7 @@ Auction.findAll = function(query, cb){
           function(auction, cb){
             User.findById(auction.ownerId, function(user){
               auction.user = user;
+              console.log('after second async >>>>>>>>>>>', user);
               cb(null, auction);
             });
           }, function(err, auctions){

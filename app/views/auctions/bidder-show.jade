@@ -2,32 +2,37 @@ extends ../shared/template
 block content
     .row
       .col-xs-12
-        h2.page-header Auction For: #{auction.itemForOffer.name}
+        h2.page-header Get You Some #{auction.itemForOffer.name}!
     .row
-      .col-xs-3
-      .col-xs-3
+      .col-xs-2
+      .col-xs-4
         img.img-responsive.thumbnail(src="#{auction.itemForOffer.photo}")
-      .col-xs-3
-        .row 
-          .col-xs-12: h3 Item Description
+      .col-xs-4
         .row
-          .col-xs-12.item-description #{auction.itemForOffer.description}
-        .row
+          .col-xs-12.item-description 
+            h3 Item Description
+            h4 #{auction.itemForOffer.description}
+            a.btn.btn-info.btn-xs.pull-right(href='/message/#{auction.itemForOffer.ownerId}/send') Contact Seller 
     .row
-          .col-xs-2
-          .col-xs-8
-            if items.length
-              h3.center Bid for this item:
-              form(method='post' action='/auction/#{auction._id}/bid')
+      .col-xs-2
+      .col-xs-4
+        h3 You know you want it, bid for it!
+      .col-xs-5
+        if items.length
+          .row
+            form(method='post' action='/auction/#{auction._id}/bid')
+              .col-xs-12.bid-form
                 .form-group
-                  select.item-list(name='itemId')
+                  p I offer up my, 
+                  select(name='itemId')
                     each item in items
                       option.form-control(value='#{item._id}')= item.name
-                button.btn.btn-default.item-list(type='submit') Place Bid
-            else 
-              h2.center You have nothing to bid. Click 'Manage Items' to add some!
-            a.btn.btn-warning.btn-lg.contact(href='/message/#{auction.itemForOffer.ownerId}/send') Contact Seller 
-          .col-xs-2
+                  p for your #{auction.itemForOffer.name}!
+                button.btn.btn-success.bid-btn(type='submit') Place Bid        
+        else 
+          
+          h2.text-center You have nothing to bid. Click 'Manage Items' to add some!
+        .col-xs-1
 
     if auction.bids.length
       h3.center Current Bids
@@ -37,12 +42,14 @@ block content
           .panel-heading
             h3 Bid ##{index + 1} #{bid.name}
           .panel-body.bidBody
-            .thumbnail(style="background-image: url(#{bid.photo});")
+            .thumbnail-bid(style="background-image: url(#{bid.photo});")
             h4 Owner: #{auction.itemOwners[index].alias}
             h3 Description
             .description= bid.description
     else
       .row
-        .col-xs-12: h2 There are currently no bids on this item...
+        .col-xs-12.no-bids
+          hr
+          h2.text-center There are currently no bids on this item...
 
 block scripts

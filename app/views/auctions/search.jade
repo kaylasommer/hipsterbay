@@ -17,6 +17,7 @@ block content
             if(auctions)
               each auction in auctions
                 a.locationValue(href='/auction/#{auction._id}', data-name=auction.user.loc.name, data-lat=auction.user.loc.lat, data-lng=auction.user.loc.lng)= auction.name
+                
             else
               p We didn't find anything that matched that search query.
               | You are way ahead of the curve!
