@@ -4,7 +4,9 @@
 [![Coverage Status](https://coveralls.io/repos/kaylalynjones/hipsterbay/badge.png)](https://coveralls.io/r/kaylalynjones/hipsterbay)
 
 ### Screenshots
-- Coming soon
+![Image1](https://raw.githubusercontent.com/kaylalynjones/hipsterbay/master/docs/screenshots/home_hip.jpg)
+![Image2](https://raw.githubusercontent.com/kaylalynjones/hipsterbay/master/docs/screenshots/manage_hip.jpg)
+
 
 ### Description
 ### A modern bartering application built on NodeJS. Users can register accounts and search for auctions that are nearby or far away. Tired of that nasty rug from the 80s? Trade it in for a new used tire.Can't stand your roommates cat? Trade it for a ferret named Cthulhu. Is that old worn-out shoe losing it's new-factor? Plenty of new old-worn out shoes to trade! This is Hipsterbay.
